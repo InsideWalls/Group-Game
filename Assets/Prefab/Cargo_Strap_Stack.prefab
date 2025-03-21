@@ -275,6 +275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cargo with straps
       objectReference: {fileID: 0}
+    - target: {fileID: 6272226183687579649, guid: 11c589670892f9845a1878616bca5db8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f0c710c776584e4db0ef8665235459c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
