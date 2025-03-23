@@ -25,4 +25,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("triggered");
+        if (other.tag == "Pickup")
+        {
+            Debug.Log("gun detected");
+            other.gameObject.SetActive(false); //inventory.AddToInventory(other.transform.parent);
+        }
+    }
 }
