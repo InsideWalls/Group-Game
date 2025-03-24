@@ -18,6 +18,7 @@ public class BulletSpawn : MonoBehaviour
         {
             Debug.Log("pressed 0");
             GameObject shell = Instantiate(bullet, spawn.position, spawn.rotation);
+            shell.transform.localScale = new Vector3(10, 10, 10);
             shell.GetComponent<Rigidbody>().linearVelocity = spawn.forward * velocity;
         }
     }

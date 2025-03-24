@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c54fb227bd08374aa8d1fb6a4c07099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 4031159010776860889, guid: c82ddbcb362d81b4e802a77a80049f04, type: 3}
   spawn: {fileID: 2724603076939972553}
-  velocity: 0
+  velocity: 25
 --- !u!1 &5322794690352865137
 GameObject:
   m_ObjectHideFlags: 0
