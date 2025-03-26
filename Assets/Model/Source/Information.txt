@@ -1,3 +1,0 @@
-Original model by Konami.
-Model ported by Friedslick6.
-Also included within the "*/Alternate" directory of this archive are textures related to the model.
