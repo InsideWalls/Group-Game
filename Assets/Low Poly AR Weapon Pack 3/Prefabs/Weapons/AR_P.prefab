@@ -949,7 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5896815481570757752, guid: bdbe99911b104c44cbd74b7cb58c4f0b, type: 3}
   spawn: {fileID: 8251308247106210300}
-  velocity: 45
+  velocity: 60
 --- !u!1 &8484675484840176429
 GameObject:
   m_ObjectHideFlags: 0
