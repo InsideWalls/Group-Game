@@ -16,4 +16,9 @@ public class BulletTimer : MonoBehaviour
         if (uptime >= timeLimit)
             Destroy(this.gameObject);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }

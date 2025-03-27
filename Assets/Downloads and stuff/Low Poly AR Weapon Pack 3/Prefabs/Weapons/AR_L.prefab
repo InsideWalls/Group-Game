@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c54fb227bd08374aa8d1fb6a4c07099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5896815481570757752, guid: bdbe99911b104c44cbd74b7cb58c4f0b, type: 3}
+  bullet: {fileID: 5240152318693216786, guid: fa6a1f21433938a4abbc9a9928ad2f7c, type: 3}
   spawn: {fileID: 2793303127910612514}
   velocity: 100
 --- !u!1 &707075347266732021
