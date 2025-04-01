@@ -7,11 +7,13 @@ public class StartButtonClick : MonoBehaviour
 {
     [SerializeField] private Button startButton; // Assign button in Inspector
     private GameObject player; // Player object
+    private Camera mainCamera; // Main camera
     private bool isMoving = false; // To prevent multiple clicks
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); // Find player
+        mainCamera = Camera.main; // Get the main camera
         startButton.onClick.AddListener(OnStartButtonClicked); // Add click listener
     }
 
@@ -21,8 +23,27 @@ public class StartButtonClick : MonoBehaviour
         {
             startButton.gameObject.SetActive(false); // Hide button
             isMoving = true; // Prevent multiple clicks
-            StartCoroutine(GlidePlayer());
+            StartCoroutine(MoveCameraThenPlayer());
+        }}
+
+    private IEnumerator MoveCameraThenPlayer()
+    {
+        // First, move the camera to target position
+        Vector3 cameraStartPos = mainCamera.transform.position;
+        Vector3 cameraTargetPos = new Vector3(223.9f, 56.2f, 391.3f);
+        float cameraMoveDuration = 2f;
+        float elapsed = 0f;
+
+        while (elapsed < cameraMoveDuration)
+        {
+            mainCamera.transform.position = Vector3.Lerp(cameraStartPos, cameraTargetPos, elapsed / cameraMoveDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
+
+        mainCamera.transform.position = cameraTargetPos; // Ensure exact position
+
+        yield return StartCoroutine(GlidePlayer());
     }
 
     private IEnumerator GlidePlayer()
