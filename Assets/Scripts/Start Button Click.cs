@@ -78,6 +78,6 @@ public class StartButtonClick : MonoBehaviour
         player.transform.position = targetXZ; // Ensure exact position
 
         // Load the level after moving
-        SceneManager.LoadScene("Main Level Scene");
+        SceneManager.LoadScene("Cutscenes - Copy");
     }
 }
