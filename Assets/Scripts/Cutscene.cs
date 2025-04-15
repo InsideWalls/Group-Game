@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SmoothMovementSceneTransition : MonoBehaviour
+public class SceneTransition : MonoBehaviour
 {
     public GameObject player; // Player object
     public float zMovementAmount = -18f; // Movement distance
@@ -22,8 +22,12 @@ public class SmoothMovementSceneTransition : MonoBehaviour
     private Vector3 initialPlayerPosition;
     private Vector3 initialCameraRotation;
 
+    public GameObject alert;
+
     private void Awake()
     {
+        alert.gameObject.SetActive(false);
+
         // Set up audio source
         if (!TryGetComponent(out audioSource))
         {
@@ -70,6 +74,7 @@ public class SmoothMovementSceneTransition : MonoBehaviour
         {
             yield return new WaitForSeconds(soundDelayAfterRotation);
             audioSource.PlayOneShot(soundEffect);
+            alert.gameObject.SetActive(true);
         }
 
         // Load the next scene
