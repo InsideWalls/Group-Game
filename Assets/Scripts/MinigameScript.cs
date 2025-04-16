@@ -5,6 +5,7 @@ public class MinigameScript : MonoBehaviour
     public RectTransform playerSquare;
 
     public Canvas canvas;
+    private RectTransform canvasRect;
     private float centerX;
     private float centerY;
     private float centerZ;
@@ -15,6 +16,8 @@ public class MinigameScript : MonoBehaviour
         centerY = canvas.transform.position.y;
         centerZ = canvas.transform.position.z;
 
+        canvasRect = canvas.GetComponent<RectTransform>();
+        //Debug.Log(canvasRect.rect.width+" x "+canvasRect.rect.height);
     }
 
     // Update is called once per frame
