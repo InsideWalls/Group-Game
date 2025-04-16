@@ -19,6 +19,9 @@ public class BulletTimer : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if (!collision.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

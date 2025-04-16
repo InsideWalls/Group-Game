@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,16 +23,23 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Inventory")]
-    public List<GameObject> weapons; //contains player's weapons
+    public List<GunBehaviour> weapons; //contains player's weapons
     public int currentWeapon; //keeps track of currently-used gun
     public Transform gunPos; //reference to where gun will appear relative to player
-    public GameObject[] guns; //set of gun prefabs for reference
+    public GunBehaviour[] guns; //set of gun prefabs for reference
+    public int ammoCount;
+    public int AmmoInGun => (currentWeapon < weapons.Count)? weapons[currentWeapon].ammoInGun : 0;
+    // Every time you access this variable, it points to the GunBehavior variable.
+    // Ternary Operator (true or false)? what happens if true : what happens if false
+    [Header("UI")]
+    public TextMeshProUGUI ammoCounter;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        weapons = new List<GameObject>();
+        weapons = new List<GunBehaviour>();
         currentWeapon = 0;
+        ammoCount = 30;
     }
 
     void Update()
@@ -38,6 +47,12 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleCamera();
         HandleWeapons();
+        HandleUI();
+    }
+
+    private void HandleUI()
+    {
+        ammoCounter.text = $"{AmmoInGun}\n<size=50%>{ammoCount}</size>";
     }
 
     private void HandleMovement()
@@ -89,33 +104,39 @@ public class PlayerController : MonoBehaviour
     {
         if(weapons.Count > 0) //checks if weapons is empty
         {
-            if (Input.GetKey(KeyCode.Alpha1) & currentWeapon != 0) //checks for key & currentweapon
+            if (Input.GetKey(KeyCode.Alpha1) && currentWeapon != 0) //checks for key & currentweapon
             {
-                weapons[currentWeapon].SetActive(false);
+                weapons[currentWeapon].gameObject.SetActive(false);
                 currentWeapon = 0;
                 Debug.Log("Switched to Gun #" + (currentWeapon + 1));
             }
-            if (Input.GetKey(KeyCode.Alpha2) & currentWeapon != 1 & weapons.Count > 1) //only passes if weapons size is big enough
+            if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1 & weapons.Count > 1) //only passes if weapons size is big enough
             {
-                weapons[currentWeapon].SetActive(false);
+                weapons[currentWeapon].gameObject.SetActive(false);
                 currentWeapon = 1;
                 Debug.Log("Switched to Gun #" + (currentWeapon + 1));
             }
-            if (Input.GetKey(KeyCode.Alpha3) & currentWeapon != 2 & weapons.Count > 2)
+            if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2 & weapons.Count > 2)
             {
-                weapons[currentWeapon].SetActive(false);
+                weapons[currentWeapon].gameObject.SetActive(false);
                 currentWeapon = 2;
                 Debug.Log("Switched to Gun #"+(currentWeapon+1));
             }
-            weapons[currentWeapon].SetActive(true);
+            weapons[currentWeapon].gameObject.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Debug.Log("Reloading");
+                weapons[currentWeapon].Reload();
+            }
         }
     }
 
-    public void AddToInventory(GameObject g)
+    public void AddToInventory(GunBehaviour gun)
     {
-        weapons.Add(g);
-        Debug.Log("added " + g.name);
-        g.SetActive(false);
+        weapons.Add(gun);
+        Debug.Log("added " + gun.name);
+        gun.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -123,20 +144,27 @@ public class PlayerController : MonoBehaviour
         Debug.Log("triggered");
         if (other.gameObject.TryGetComponent<HoverAndRotate>(out HoverAndRotate component)) //is on each floating gun prefab
         {
-            string str = other.gameObject.name;
-            Debug.Log($"name {str}"); //Interpollated Stirng. Don't worry about using a bunch of plus signs
-            
-            int index = (int)component.pickupType;
-
-            if (index >= 0 && index <= 4) //& checks both sides no matter what.
-            // && will immediately returning false if the left is false. This is called "short-circuiting".
+            if(component.isAmmoPickup)
             {
-                GameObject weapon = Instantiate(guns[index], gunPos.position, gunPos.rotation);
-                weapon.transform.SetParent(gunPos, true);
-                // weapon.transform.localScale = new Vector3(10, 10, 10);
-                AddToInventory(weapon);
-                Destroy(other.gameObject);
+                ammoCount += 30;
             }
+            else
+            {
+                string str = other.gameObject.name;
+                Debug.Log($"name {str}"); //Interpollated Stirng. Don't worry about using a bunch of plus signs
+                
+                int index = (int)component.pickupType;
+
+                if (index >= 0 && index <= 5) //& checks both sides no matter what.
+                // && will immediately returning false if the left is false. This is called "short-circuiting".
+                {
+                    GunBehaviour weapon = Instantiate(guns[index], gunPos.position, gunPos.rotation);
+                    weapon.transform.SetParent(gunPos, true);
+                    // weapon.transform.localScale = new Vector3(10, 10, 10);
+                    AddToInventory(weapon);
+                }
+            }
+            Destroy(other.gameObject);
         }
     }
 }
