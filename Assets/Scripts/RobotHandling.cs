@@ -4,6 +4,8 @@ public class RobotHandling : MonoBehaviour
 {
     public PlayerMovement pControl;
     private PlayerMovement robControl;
+    public GameObject playerCam;
+    private GameObject robCam;
 
     private GameObject currentRobot;
     private bool hackable=false;
@@ -22,6 +24,8 @@ public class RobotHandling : MonoBehaviour
             {
                 pControl.enabled=!pControl.enabled;
                 robControl.enabled=!robControl.enabled;
+                playerCam.SetActive(!playerCam.activeSelf);
+                robCam.SetActive(!robCam.activeSelf);
                 Debug.Log("switched");
             }
             else
@@ -35,6 +39,7 @@ public class RobotHandling : MonoBehaviour
             Debug.Log("hacked!");
             hacked = true;
             robControl = currentRobot.GetComponent<PlayerMovement>();
+            robCam = currentRobot.transform.Find("Main Camera").gameObject;
         }
     }
 
