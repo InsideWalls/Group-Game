@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - GunPickup
   - HackRange
+  - HackedRobot
   layers:
   - Default
   - TransparentFX
