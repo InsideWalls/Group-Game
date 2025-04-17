@@ -30,7 +30,7 @@ public class StartButtonClick : MonoBehaviour
     {
         // First, move the camera to target position
         Vector3 cameraStartPos = mainCamera.transform.position;
-        Vector3 cameraTargetPos = new Vector3(223.9f, 56.2f, 391.3f);
+        Vector3 cameraTargetPos = new Vector3(223.9f, 63.2f, 391.3f);
         float cameraMoveDuration = 2f;
         float elapsed = 0f;
 
@@ -49,7 +49,7 @@ public class StartButtonClick : MonoBehaviour
     private IEnumerator GlidePlayer()
     {
         Vector3 startPosition = player.transform.position; // Starting position
-        Vector3 targetY = startPosition + new Vector3(0, 8, 0); // Move up 8 units
+        Vector3 targetY = startPosition; //+ new Vector3(0, 8, 0); // Move up 8 units
         Vector3 targetXZ = targetY + new Vector3(53.4f, 0, -68.1f); // Move x+53.4, z-68.1
 
         float durationFirstGlide = 2f;
