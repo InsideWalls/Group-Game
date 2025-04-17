@@ -5221,7 +5221,7 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: ddc2be589575eef4288e23b0b66a915a, type: 3}
   soundDelayAfterRotation: 0.6
   nextSceneName: Main Level Scene
-  sceneLoadDelayAfterSound: 2.5
+  sceneLoadDelayAfterSound: 1.5
   alert: {fileID: 835058349}
 --- !u!1 &1660181274
 GameObject:

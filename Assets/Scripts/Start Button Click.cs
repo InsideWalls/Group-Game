@@ -10,13 +10,29 @@ public class StartButtonClick : MonoBehaviour
     private Camera mainCamera; // Main camera
     private bool isMoving = false; // To prevent multiple clicks
 
+    public GameObject IBG;
+    public Button Instruct;
+    public GameObject message;
+    public Button QuitMenu;
+
     void Start()
     {
+        mainmenu();
+    }
+    private void mainmenu()
+    {
+        startButton.gameObject.SetActive(true); // Show buttons
         player = GameObject.FindGameObjectWithTag("Player"); // Find player
         mainCamera = Camera.main; // Get the main camera
         startButton.onClick.AddListener(OnStartButtonClicked); // Add click listener
-    }
 
+
+        IBG.gameObject.SetActive(false);
+        message.gameObject.SetActive(false);
+        QuitMenu.gameObject.SetActive(false);
+
+        Instruct.onClick.AddListener(Instructclick); // Add click listener
+    }
     private void OnStartButtonClicked()
     {
         if (!isMoving && player != null)
@@ -25,6 +41,19 @@ public class StartButtonClick : MonoBehaviour
             isMoving = true; // Prevent multiple clicks
             StartCoroutine(MoveCameraThenPlayer());
         }}
+
+    private void Instructclick()
+    {
+        if (!isMoving && player != null)
+        {
+            startButton.gameObject.SetActive(false);
+            IBG.gameObject.SetActive(true);
+            message.gameObject.SetActive(true);
+            QuitMenu.gameObject.SetActive(true);
+
+            QuitMenu.onClick.AddListener(mainmenu); // Add click listener
+        }
+    }
 
     private IEnumerator MoveCameraThenPlayer()
     {
