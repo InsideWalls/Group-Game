@@ -20,6 +20,8 @@ public class MinigameScript : MonoBehaviour
     public List<RectTransform> blocks;
 
     private bool ended=false;
+    public float timeLeft = 10;
+    private int timeInt;
     
     void Start()
     {
@@ -27,8 +29,8 @@ public class MinigameScript : MonoBehaviour
         centerY = canvas.transform.position.y;
         centerZ = canvas.transform.position.z;
 
-        Debug.Log(centerX + ", " + centerY+", "+centerZ);
-        Debug.Log(playerSquare.localPosition.x + ", " + playerSquare.localPosition.y);
+        //Debug.Log(centerX + ", " + centerY+", "+centerZ);
+        //Debug.Log(playerSquare.localPosition.x + ", " + playerSquare.localPosition.y);
 
         canvasRect = canvas.GetComponent<RectTransform>();
         //Debug.Log(canvasRect.rect.width+" X "+canvasRect.rect.height);
@@ -37,7 +39,7 @@ public class MinigameScript : MonoBehaviour
         rightX = centerX + canvasRect.rect.width/2-offset;
         topY = centerY + canvasRect.rect.height/2-offset;
         bottomY = centerY - canvasRect.rect.height/2 + offset;
-        Debug.Log(leftX + ", " + rightX + ", " + bottomY + ", " + topY);
+        //Debug.Log(leftX + ", " + rightX + ", " + bottomY + ", " + topY);
     }
 
     // Update is called once per frame
@@ -45,6 +47,14 @@ public class MinigameScript : MonoBehaviour
     {
         if (!ended)
         {
+            timeInt = (int)timeLeft;
+            timeLeft -= Time.deltaTime;
+
+            if(timeInt > timeLeft)
+            {
+                Debug.Log(timeInt);
+            }
+
             Vector3 lastPos = playerSquare.position;
             if (Input.GetKeyDown("right"))
             {
@@ -79,6 +89,13 @@ public class MinigameScript : MonoBehaviour
             }
 
             playerSquare.position = keepInBounds(playerSquare);
+
+            if (timeLeft <= 0)
+            {
+                Debug.Log("Time's up!");
+                Debug.Log(timeLeft);
+                ended = true;
+            }
         }
     }
 

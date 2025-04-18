@@ -8,9 +8,6 @@ public class RobotHandling : MonoBehaviour
     private PlayerMovement robControl;
     public GameObject playerCam;
     private GameObject robCam;
-
-    private bool hackable=false;
-    private bool hacked=false;
     
     private GameObject newRobot;
     public List<GameObject> robots;
@@ -21,7 +18,7 @@ public class RobotHandling : MonoBehaviour
     {
         Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
         nextRobotIndex = 0;
-        currentRobotIndex = -1;
+        currentRobotIndex = 0;
     }
 
     void Update()
@@ -34,7 +31,7 @@ public class RobotHandling : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (robots.Count >0)
+            if (robots.Count>0)
             {
                 pControl.enabled=!pControl.enabled;
                 playerCam.SetActive(!playerCam.activeSelf);
@@ -53,12 +50,6 @@ public class RobotHandling : MonoBehaviour
             newRobot.tag = "HackedRobot";
             newRobot.transform.Find("hackRange").gameObject.SetActive(false);
             Debug.Log("hacked! robot was set to the " + (nextRobotIndex+1) + " key");
-            if (nextRobotIndex == 0) //if this is the first robot
-            {
-                currentRobotIndex = 0;
-                //robControl = newRobot.GetComponent<PlayerMovement>();
-                //robCam = newRobot.transform.Find("Main Camera").gameObject;
-            }
 
             robots.Add(newRobot);
             nextRobotIndex++;
