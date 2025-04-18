@@ -19,22 +19,61 @@ public class RobotHandling : MonoBehaviour
 
     void Start()
     {
-        hackGame.enabled = false;
+        hackGame.enabled = true;
         hackCam.SetActive(false);
-        Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
+        //Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
         nextRobotIndex = 0;
         currentRobotIndex = 0;
     }
 
     void Update()
     {
+        if (pControl.enabled)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1) & robots.Count > 0)
+            {
+                currentRobotIndex = 0;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2) & robots.Count > 1)
+            {
+                currentRobotIndex = 1;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3) & robots.Count > 2)
+            {
+                currentRobotIndex = 2;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4) & robots.Count > 3)
+            {
+                currentRobotIndex = 3;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5) & robots.Count > 4)
+            {
+                currentRobotIndex = 4;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6) & robots.Count > 5)
+            {
+                currentRobotIndex = 5;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha7) & robots.Count > 6)
+            {
+                currentRobotIndex = 6;
+                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+            }
+        }
+
         if (robots.Count >0)
         {
             robControl = robots[currentRobotIndex].GetComponent<PlayerMovement>();
             robCam = robots[currentRobotIndex].transform.Find("Main Camera").gameObject;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !hackCam.activeSelf)
         {
             if (robots.Count>0)
             {
@@ -52,68 +91,35 @@ public class RobotHandling : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && newRobot != null && pControl.enabled)
         {
+            //*
+            hackCam.SetActive(true);
+            pControl.enabled = false;
+            playerCam.SetActive(false);
+            hackGame.gameStart();
+        }
+    }
+
+    public void endOfHack(bool success)
+    {
+        if(success)
+        {
             newRobot.tag = "HackedRobot";
             newRobot.transform.Find("hackRange").gameObject.SetActive(false);
-            Debug.Log("hacked! robot was set to the " + (nextRobotIndex+1) + " key");
+            Debug.Log("hacked! robot was set to the " + (nextRobotIndex + 1) + " key");
 
             robots.Add(newRobot);
             nextRobotIndex++;
             newRobot = null;
         }
-
-        
-        if (Input.GetKeyDown(KeyCode.E))
+        else
         {
-            hackGame.enabled = true;
-            hackCam.SetActive(true);
-            pControl.enabled = false;
-            playerCam.SetActive(false);
+            Debug.Log("failed the hack");
         }
+
+        hackCam.SetActive(false);
+        pControl.enabled = true;
+        playerCam.SetActive(true);
     }
-
-
-    //*
-    void FixedUpdate()
-    {
-        if (pControl.enabled)
-        {
-            if (Input.GetKey(KeyCode.Alpha1) & robots.Count>0)
-            {
-                currentRobotIndex=0;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-            if (Input.GetKey(KeyCode.Alpha2) & robots.Count > 1)
-            {
-                currentRobotIndex=1;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-            if (Input.GetKey(KeyCode.Alpha3) & robots.Count > 2)
-            {
-                currentRobotIndex=2;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-            if (Input.GetKey(KeyCode.Alpha4) & robots.Count > 3)
-            {
-                currentRobotIndex=3;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-            if (Input.GetKey(KeyCode.Alpha5) & robots.Count > 4)
-            {
-                currentRobotIndex=4;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-            if (Input.GetKey(KeyCode.Alpha6) & robots.Count > 5)
-            {
-                currentRobotIndex=5;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-            if (Input.GetKey(KeyCode.Alpha7) & robots.Count > 6)
-            {
-                currentRobotIndex=6;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-            }
-        }
-    }//*/
 
     void OnTriggerEnter(Collider other)
     {

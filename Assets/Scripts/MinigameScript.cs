@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MinigameScript : MonoBehaviour
 {
-    public HackGameHandler hackHandle;
+    public RobotHandling robHandle;
 
     public Canvas canvas;
     private RectTransform canvasRect;
@@ -23,8 +23,9 @@ public class MinigameScript : MonoBehaviour
 
     public List<RectTransform> blocks;
 
-    private bool ended=false;
-    public float timeLeft = 10;
+    private bool gameOn=false;
+    public float timeLimit = 15;
+    private float timeLeft;
     private int timeInt;
     
     void Start()
@@ -34,22 +35,26 @@ public class MinigameScript : MonoBehaviour
         centerZ = canvas.transform.position.z;
 
         //Debug.Log(centerX + ", " + centerY+", "+centerZ);
-        startPos = new Vector3(playerSquare.localPosition.x, playerSquare.localPosition.y, 0);
+        startPos = playerSquare.anchoredPosition;
+        Debug.Log("start: " + startPos.x + ", " + startPos.y + ", " + startPos.z);
+        //startPos = new Vector3(playerSquare.rect.x, playerSquare.rect.y, 0);
 
         canvasRect = canvas.GetComponent<RectTransform>();
-        //Debug.Log(canvasRect.rect.width+" X "+canvasRect.rect.height);
+        Debug.Log(canvasRect.position);
+        Debug.Log(canvasRect.rect.position);
         float offset = playerSquare.rect.width/2.0f;
         leftX = centerX - canvasRect.rect.width/2 + offset;
         rightX = centerX + canvasRect.rect.width/2-offset;
         topY = centerY + canvasRect.rect.height/2-offset;
         bottomY = centerY - canvasRect.rect.height/2 + offset;
         //Debug.Log(leftX + ", " + rightX + ", " + bottomY + ", " + topY);
+        timeLeft = timeLimit;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ended)
+        if (gameOn)
         {
             timeInt = (int)timeLeft;
             timeLeft -= Time.deltaTime;
@@ -88,8 +93,8 @@ public class MinigameScript : MonoBehaviour
             if (endSquare.position == playerSquare.position)
             {
                 Debug.Log("you did it :)"); 
-                ended = true;
-
+                gameOn = false;
+                robHandle.endOfHack(true);
             }
 
             playerSquare.position = keepInBounds(playerSquare);
@@ -98,7 +103,8 @@ public class MinigameScript : MonoBehaviour
             {
                 Debug.Log("Time's up!");
                 Debug.Log(timeLeft);
-                ended = true;
+                gameOn = false;
+                robHandle.endOfHack(false);
             }
         }
     }
@@ -126,4 +132,11 @@ public class MinigameScript : MonoBehaviour
         return rect.position;
     }
     //*/
+    public void gameStart()
+    {
+        //Debug.Log("start: " + startPos.x + ", " + startPos.y + ", " + startPos.z);
+        playerSquare.anchoredPosition = startPos;
+        timeLeft = timeLimit;
+        gameOn = true;
+    }
 }
