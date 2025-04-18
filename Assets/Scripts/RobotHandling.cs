@@ -17,6 +17,9 @@ public class RobotHandling : MonoBehaviour
     public MinigameScript hackGame;
     public GameObject hackCam;
 
+    public List<GameObject> robotUI;
+    public List<GameObject> circleUI;
+
     void Start()
     {
         hackGame.enabled = true;
@@ -24,6 +27,29 @@ public class RobotHandling : MonoBehaviour
         //Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
         nextRobotIndex = 0;
         currentRobotIndex = 0;
+
+        hideui();
+        hidecircle();
+    }
+
+    public void hideui()
+    {
+        foreach(GameObject robUI in robotUI)
+        {
+            robUI.SetActive(false);
+        }
+    }
+    public void hidecircle()
+    {
+        foreach (GameObject circUI in circleUI)
+        {
+            circUI.SetActive(false);
+        }
+    }
+
+    public void showui(int robIndex)
+    {
+        robotUI[robIndex].SetActive(true);
     }
 
     void Update()
@@ -34,36 +60,50 @@ public class RobotHandling : MonoBehaviour
             {
                 currentRobotIndex = 0;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
             if (Input.GetKeyDown(KeyCode.Alpha2) & robots.Count > 1)
             {
                 currentRobotIndex = 1;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
             if (Input.GetKeyDown(KeyCode.Alpha3) & robots.Count > 2)
             {
                 currentRobotIndex = 2;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
             if (Input.GetKeyDown(KeyCode.Alpha4) & robots.Count > 3)
             {
                 currentRobotIndex = 3;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
             if (Input.GetKeyDown(KeyCode.Alpha5) & robots.Count > 4)
             {
                 currentRobotIndex = 4;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
             if (Input.GetKeyDown(KeyCode.Alpha6) & robots.Count > 5)
             {
                 currentRobotIndex = 5;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
             if (Input.GetKeyDown(KeyCode.Alpha7) & robots.Count > 6)
             {
                 currentRobotIndex = 6;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                hidecircle();
+                circleUI[currentRobotIndex].SetActive(true);
             }
         }
 
@@ -108,6 +148,7 @@ public class RobotHandling : MonoBehaviour
             Debug.Log("hacked! robot was set to the " + (nextRobotIndex + 1) + " key");
 
             robots.Add(newRobot);
+            showui(nextRobotIndex);
             nextRobotIndex++;
             newRobot = null;
         }
