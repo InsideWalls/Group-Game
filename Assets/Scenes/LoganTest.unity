@@ -5615,6 +5615,7 @@ GameObject:
   - component: {fileID: 1504229709}
   - component: {fileID: 1504229708}
   - component: {fileID: 1504229712}
+  - component: {fileID: 1504229713}
   m_Layer: 0
   m_Name: minigameWall
   m_TagString: Untagged
@@ -5724,6 +5725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8968599058ab20f478fa30fc34a3b25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hackHandle: {fileID: 0}
   canvas: {fileID: 1116312646}
   playerSquare: {fileID: 1422168626}
   endSquare: {fileID: 393235816}
@@ -5769,6 +5771,20 @@ MonoBehaviour:
   - {fileID: 1914774441}
   - {fileID: 1340519326}
   timeLeft: 10
+--- !u!114 &1504229713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504229707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec3a5596d3f40243b6c896a4e82be2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotHandle: {fileID: 0}
+  hackGame: {fileID: 0}
 --- !u!1001 &1522364284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7073,6 +7089,8 @@ MonoBehaviour:
   pControl: {fileID: 1846306666}
   playerCam: {fileID: 573703974}
   robots: []
+  hackGame: {fileID: 1504229712}
+  hackCam: {fileID: 1974446510}
 --- !u!1 &1914774440
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,8 +14,13 @@ public class RobotHandling : MonoBehaviour
     private int nextRobotIndex;
     private int currentRobotIndex;
 
+    public MinigameScript hackGame;
+    public GameObject hackCam;
+
     void Start()
     {
+        hackGame.enabled = false;
+        hackCam.SetActive(false);
         Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
         nextRobotIndex = 0;
         currentRobotIndex = 0;
@@ -45,7 +50,7 @@ public class RobotHandling : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && newRobot != null)
+        if (Input.GetKeyDown(KeyCode.F) && newRobot != null && pControl.enabled)
         {
             newRobot.tag = "HackedRobot";
             newRobot.transform.Find("hackRange").gameObject.SetActive(false);
@@ -54,6 +59,15 @@ public class RobotHandling : MonoBehaviour
             robots.Add(newRobot);
             nextRobotIndex++;
             newRobot = null;
+        }
+
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            hackGame.enabled = true;
+            hackCam.SetActive(true);
+            pControl.enabled = false;
+            playerCam.SetActive(false);
         }
     }
 

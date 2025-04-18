@@ -1505,6 +1505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 371613476}
     m_Modifications:
+    - target: {fileID: 5436207418684079005, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7392334553620615488, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 15
@@ -3416,6 +3420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 371613476}
     m_Modifications:
+    - target: {fileID: 6137735234252354271, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7419260731707568730, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
       propertyPath: m_LocalScale.x
       value: 15
@@ -10279,6 +10287,8 @@ MonoBehaviour:
   pControl: {fileID: 2009058592}
   playerCam: {fileID: 979656603}
   robots: []
+  hackGame: {fileID: 0}
+  hackCam: {fileID: 0}
 --- !u!1001 &2011726187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10454,6 +10464,10 @@ PrefabInstance:
     - target: {fileID: 8609571142284620566, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
       propertyPath: m_TagString
       value: GunPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863807715191087787, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8948801968451905964, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
       propertyPath: m_LocalScale.x

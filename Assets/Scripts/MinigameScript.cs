@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class MinigameScript : MonoBehaviour
 {
+    public HackGameHandler hackHandle;
+
     public Canvas canvas;
     private RectTransform canvasRect;
     public RectTransform playerSquare;
@@ -16,6 +18,8 @@ public class MinigameScript : MonoBehaviour
     private float rightX;
     private float topY;
     private float bottomY;
+
+    private Vector3 startPos;
 
     public List<RectTransform> blocks;
 
@@ -30,7 +34,7 @@ public class MinigameScript : MonoBehaviour
         centerZ = canvas.transform.position.z;
 
         //Debug.Log(centerX + ", " + centerY+", "+centerZ);
-        //Debug.Log(playerSquare.localPosition.x + ", " + playerSquare.localPosition.y);
+        startPos = new Vector3(playerSquare.localPosition.x, playerSquare.localPosition.y, 0);
 
         canvasRect = canvas.GetComponent<RectTransform>();
         //Debug.Log(canvasRect.rect.width+" X "+canvasRect.rect.height);
@@ -85,7 +89,7 @@ public class MinigameScript : MonoBehaviour
             {
                 Debug.Log("you did it :)"); 
                 ended = true;
-                endSquare.position -= new Vector3(0,0,.1f);
+
             }
 
             playerSquare.position = keepInBounds(playerSquare);
