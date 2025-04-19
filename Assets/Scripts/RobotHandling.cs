@@ -131,11 +131,27 @@ public class RobotHandling : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && newRobot != null && pControl.enabled)
         {
-            //*
-            hackCam.SetActive(true);
-            pControl.enabled = false;
-            playerCam.SetActive(false);
-            hackGame.gameStart();
+            float p = Ranfdom.Range(0, 1);
+            if (p > 0.7) //30% chance for hack to trigger
+            {
+                Debug.Log("minigame triggered");
+                hackCam.SetActive(true);
+                pControl.enabled = false;
+                playerCam.SetActive(false);
+                hackGame.gameStart();
+            }
+            else
+            {
+                newRobot.tag = "HackedRobot";
+                newRobot.transform.Find("hackRange").gameObject.SetActive(false);
+                Debug.Log("hacked! robot was set to the " + (nextRobotIndex + 1) + " key");
+
+                robots.Add(newRobot);
+                showui(nextRobotIndex);
+                nextRobotIndex++;
+                newRobot = null;
+            }
+            
         }
     }
 
