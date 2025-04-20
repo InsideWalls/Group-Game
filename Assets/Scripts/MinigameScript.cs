@@ -36,12 +36,12 @@ public class MinigameScript : MonoBehaviour
 
         //Debug.Log(centerX + ", " + centerY+", "+centerZ);
         startPos = playerSquare.anchoredPosition;
-        Debug.Log("start: " + startPos.x + ", " + startPos.y + ", " + startPos.z);
+        //Debug.Log("start: " + startPos.x + ", " + startPos.y + ", " + startPos.z);
         //startPos = new Vector3(playerSquare.rect.x, playerSquare.rect.y, 0);
 
         canvasRect = canvas.GetComponent<RectTransform>();
-        Debug.Log(canvasRect.position);
-        Debug.Log(canvasRect.rect.position);
+        //Debug.Log(canvasRect.position);
+        //Debug.Log(canvasRect.rect.position);
         float offset = playerSquare.rect.width/2.0f;
         leftX = centerX - canvasRect.rect.width/2 + offset;
         rightX = centerX + canvasRect.rect.width/2-offset;
@@ -92,7 +92,7 @@ public class MinigameScript : MonoBehaviour
 
             if (endSquare.position == playerSquare.position)
             {
-                Debug.Log("you did it :)"); 
+                //Debug.Log("you did it :)"); 
                 gameOn = false;
                 robHandle.endOfHack(true);
             }

@@ -131,7 +131,8 @@ public class RobotHandling : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && newRobot != null && pControl.enabled)
         {
-            float p = Ranfdom.Range(0, 1);
+            float p = Random.Range(0.0f, 1.0f);
+            Debug.Log("p="+p);
             if (p > 0.7) //30% chance for hack to trigger
             {
                 Debug.Log("minigame triggered");

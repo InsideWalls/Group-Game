@@ -6696,6 +6696,10 @@ PrefabInstance:
       propertyPath: robHandle
       value: 
       objectReference: {fileID: 2009058594}
+    - target: {fileID: 7335394830854369460, guid: 8ce7b0795e8e2104ca84a9723e688c6b, type: 3}
+      propertyPath: timeLimit
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8696445253747247169, guid: 8ce7b0795e8e2104ca84a9723e688c6b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 230
