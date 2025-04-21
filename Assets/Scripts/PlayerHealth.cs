@@ -5,6 +5,10 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth = 5;
     public float bumpForce = 2f;
 
+    [Header("Audio")]
+    public AudioClip damageSound;
+    private AudioSource audioSource;
+
     [Header("Hearts")]
     public GameObject Heart1;
     public GameObject Heart2;
@@ -14,6 +18,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         Debug.Log("Player health: " + currentHealth);
         allhearts();
     }
@@ -23,21 +33,33 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth == 4)
         {
             Heart5.SetActive(false);
+            PlayDamageSound();
         }
         if (currentHealth == 3)
         {
             Heart4.SetActive(false);
+            PlayDamageSound();
         }
         if (currentHealth == 2)
         {
             Heart3.SetActive(false);
+            PlayDamageSound();
         }
         if (currentHealth == 1)
         {
             Heart2.SetActive(false);
+            PlayDamageSound();
         }
     }
-    public void allhearts()
+
+    private void PlayDamageSound()
+    {
+        if (damageSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
+    }
+public void allhearts()
     {
         Heart1.SetActive(true);
         Heart2.SetActive(true);

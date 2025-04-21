@@ -11901,6 +11901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 10
+  damageSound: {fileID: 8300000, guid: df85a2169e472b44cba125e5eff341a1, type: 3}
   Heart1: {fileID: 2021293933}
   Heart2: {fileID: 527042971}
   Heart3: {fileID: 325474841}
