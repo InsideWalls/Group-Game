@@ -987,6 +987,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adf0ff7e92b14ad4b850701cd33a59d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2009058594}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: adf0ff7e92b14ad4b850701cd33a59d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2009058595}
   m_SourcePrefab: {fileID: 100100000, guid: adf0ff7e92b14ad4b850701cd33a59d0, type: 3}
 --- !u!1 &113636924
 GameObject:
@@ -2767,6 +2770,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2009058589}
+    - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: BumpForce
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -11580,6 +11587,19 @@ MonoBehaviour:
   circle5: {fileID: 1689667866}
   circle6: {fileID: 12216643}
   circle7: {fileID: 1633674203}
+--- !u!114 &2009058595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009058589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5112cee8c14fae940b8f21fbd15d242a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpForce: 10
 --- !u!1001 &2011726187
 PrefabInstance:
   m_ObjectHideFlags: 0
