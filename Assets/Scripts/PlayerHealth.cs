@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -93,6 +94,7 @@ public void allhearts()
     {
         Debug.Log("Dead!");
         // Need to make death screen and switch to it here
+        SceneManager.LoadScene("Death");
     }
 
     // Test taking damage
