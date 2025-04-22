@@ -15,8 +15,31 @@ public class CountdownTimer : MonoBehaviour
     private AudioSource audioSource;
     public bool spawnEnemy = false;
 
+    public GameObject Enemy1;
+    public GameObject Enemy2;
+    public GameObject Enemy3;
+    public GameObject Enemy4;
+    public GameObject Enemy5;
+    public GameObject Enemy6;
+
+    private bool enemy2Spawned = false;
+    private float enemy2SpawnTime;
+
+    private bool enemy4Spawned = false;
+    private float enemy4SpawnTime;
+
+
+
     void Start()
     {
+        Enemy1.SetActive(false);
+        Enemy2.SetActive(false);
+        Enemy3.SetActive(false);
+        Enemy4.SetActive(false);
+        Enemy5.SetActive(false);
+        Enemy6.SetActive(false);
+
+
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = alertSound;
 
@@ -44,6 +67,21 @@ public class CountdownTimer : MonoBehaviour
                 HandleCountdownEnd();
             }
         }
+        if (enemy2Spawned && Time.time - enemy2SpawnTime >= 10f)
+        {
+            enemy2Spawned = false; // Make it only run once
+            Enemy3.SetActive(true);
+            Enemy4.SetActive(true);
+
+            enemy4Spawned = true;
+            enemy4SpawnTime = Time.time;
+        }
+        if (enemy4Spawned && Time.time - enemy2SpawnTime >= 20f)
+        {
+            Enemy5.SetActive(true);
+            Enemy6.SetActive(true);
+            enemy4Spawned = false;
+        }
     }
 
     void UpdateCountdownDisplay()
@@ -60,18 +98,22 @@ public class CountdownTimer : MonoBehaviour
         }
 
         // Play sound
-        StartCoroutine(PlayAlertSoundTwice());
+        StartCoroutine(PlayAlertSound());
     }
 
-    IEnumerator PlayAlertSoundTwice()
+    IEnumerator PlayAlertSound()
     {
-        for (int i = 0; i < 2; i++)
-        {
+        
             audioSource.Play();
             yield return new WaitForSeconds(alertSound.length);
-        }
+
+        Enemy1.SetActive(true);
+        Enemy2.SetActive(true);
+
+        enemy2Spawned = true;
+        enemy2SpawnTime = Time.time;
 
         // Causes enemies to spawn in another script
-        spawnEnemy = true;
+        //spawnEnemy = true;
     }
 }
