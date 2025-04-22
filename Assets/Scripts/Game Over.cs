@@ -18,6 +18,9 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = menunoise;
         checkbutton();
