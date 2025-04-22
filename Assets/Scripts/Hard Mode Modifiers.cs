@@ -10,12 +10,12 @@ public class HardModeModifiers : MonoBehaviour
         Invoke("CheckHardMode", 0.1f);
     }
 
-    private void CheckHardMode()
-    {
-        if (GameDifficultyManager.Instance.HardMode)
-        {
-            DestroyObjects();
-        }}
+    //private void CheckHardMode()
+    //{
+    //    if (GameDifficultyManager.Instance.HardMode)
+    //    {
+    //        DestroyObjects();
+    //    }}
 
     private void DestroyObjects()
     {
