@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
             audioSource.PlayOneShot(damageSound);
         }
     }
-public void allhearts()
+    public void allhearts()
     {
         Heart1.SetActive(true);
         Heart2.SetActive(true);
@@ -100,7 +100,7 @@ public void allhearts()
     }
 
 
-     
+
 
     public void IncrementWinCondition()
     {
@@ -109,6 +109,6 @@ public void allhearts()
         if (winCondition == 6)
         {
             SceneManager.LoadScene("Win");
-        }   
+        }
     }
 }
