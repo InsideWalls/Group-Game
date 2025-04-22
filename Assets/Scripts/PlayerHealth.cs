@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject Heart4;
     public GameObject Heart5;
 
+    public int winCondition = 0;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -97,9 +99,16 @@ public void allhearts()
         SceneManager.LoadScene("Death");
     }
 
-    // Test taking damage
-    public void TestDamage()
+
+     
+
+    public void IncrementWinCondition()
     {
-        TakeDamage(1, gameObject); // Test with 1 damage
+        winCondition++;
+        Debug.Log("Win Condition: " + winCondition + " out of 6");
+        if (winCondition == 6)
+        {
+            SceneManager.LoadScene("Win");
+        }   
     }
 }

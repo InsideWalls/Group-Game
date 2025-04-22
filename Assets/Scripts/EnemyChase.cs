@@ -18,8 +18,11 @@ public class EnemyChase : MonoBehaviour
     private bool canBump = true;
     private Rigidbody rb;
 
+    private PlayerHealth playerHealth;
+
     private void Start()
     {
+        playerHealth = Player.GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody>();
         if (Player == null)
         {
@@ -61,8 +64,12 @@ public class EnemyChase : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("bullet hit");
+
+
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
+
+            playerHealth.IncrementWinCondition();
         }
     }
 
