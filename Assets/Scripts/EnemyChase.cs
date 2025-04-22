@@ -57,6 +57,13 @@ public class EnemyChase : MonoBehaviour
                 StartCoroutine(BumpCooldownRoutine());
             }
         }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("bullet hit");
+            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
+        }
     }
 
     private void BumpCharactersApart(GameObject player)
