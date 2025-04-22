@@ -15,6 +15,10 @@ public class StartButtonClick : MonoBehaviour
     public GameObject message;
     public Button QuitMenu;
 
+    [Header("Audio")]
+    public AudioClip menunoise;
+    private AudioSource audioSource;
+
     void Start()
     {
         mainmenu();
@@ -39,6 +43,7 @@ public class StartButtonClick : MonoBehaviour
         {
             startButton.gameObject.SetActive(false); // Hide button
             isMoving = true; // Prevent multiple clicks
+            menusound();
             StartCoroutine(MoveCameraThenPlayer());
         }}
 
@@ -50,6 +55,7 @@ public class StartButtonClick : MonoBehaviour
             IBG.gameObject.SetActive(true);
             message.gameObject.SetActive(true);
             QuitMenu.gameObject.SetActive(true);
+            menusound();
 
             QuitMenu.onClick.AddListener(mainmenu); // Add click listener
         }
@@ -108,5 +114,11 @@ public class StartButtonClick : MonoBehaviour
 
         // Load the level after moving
         SceneManager.LoadScene("Cutscenes - Copy");
+    }
+    IEnumerator menusound()
+    {
+        audioSource.PlayOneShot(menunoise);
+        yield return new WaitForSeconds(menunoise.length);
+
     }
 }
