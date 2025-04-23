@@ -171,14 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: M870 Pickup
       objectReference: {fileID: 0}
-    - target: {fileID: 4152047043314764797, guid: 3427a3d56e95e4c4ba2c2fc3ace39090, type: 3}
-      propertyPath: muzzleFlash
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4152047043314764797, guid: 3427a3d56e95e4c4ba2c2fc3ace39090, type: 3}
-      propertyPath: spreadAngle
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1087,7 +1079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
       propertyPath: guns.Array.size
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
       propertyPath: 'guns.Array.data[0]'
@@ -1113,6 +1105,26 @@ PrefabInstance:
       propertyPath: 'guns.Array.data[5]'
       value: 
       objectReference: {fileID: 8028415973911792344, guid: fc703f82db031bb468b2415dd82b9d7d, type: 3}
+    - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
+      propertyPath: 'guns.Array.data[6]'
+      value: 
+      objectReference: {fileID: -1287815996048601630, guid: 3d475f10d076c444d8584c1be775ba38, type: 3}
+    - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
+      propertyPath: 'guns.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1837195816878034821, guid: e7461e3cb4dfd384ea54841be167ca84, type: 3}
+    - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
+      propertyPath: 'guns.Array.data[8]'
+      value: 
+      objectReference: {fileID: -4043982152920613458, guid: 436d84b39ebbb99449cf0c0ed23b24a5, type: 3}
+    - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
+      propertyPath: 'guns.Array.data[9]'
+      value: 
+      objectReference: {fileID: 555623325535037034, guid: 5f04650d3064895489cdb8f95e907c1b, type: 3}
+    - target: {fileID: 304250334622739848, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
+      propertyPath: 'guns.Array.data[10]'
+      value: 
+      objectReference: {fileID: 5647716968593798671, guid: 8147cbc638990a74995cb3f8161c7edd, type: 3}
     - target: {fileID: 4191212299118093224, guid: 6d55890d1aa2cbe4fb6a5488f1c1e249, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

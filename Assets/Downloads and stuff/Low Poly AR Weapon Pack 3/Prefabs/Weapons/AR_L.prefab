@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2793303127910612514}
   - {fileID: 8125591422283849509}
   - {fileID: 1156510090709629130}
   - {fileID: 7028014360329088815}
@@ -43,7 +44,6 @@ Transform:
   - {fileID: 1317518559165722394}
   - {fileID: 346245211603747774}
   - {fileID: 3911369269405586544}
-  - {fileID: 2793303127910612514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4377587441461516662
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5240152318693216786, guid: fa6a1f21433938a4abbc9a9928ad2f7c, type: 3}
   spawn: {fileID: 2793303127910612514}
-  velocity: 100
+  velocity: 5
   playerController: {fileID: 0}
   ammoInGun: 0
   fireCooldown: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   roundsPerMinute: 300
   fullAuto: 1
   magazineSize: 30
-  spreadAngle: 0
+  spreadAngle: 2.25
 --- !u!1 &707075347266732021
 GameObject:
   m_ObjectHideFlags: 0

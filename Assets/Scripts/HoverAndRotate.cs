@@ -9,6 +9,11 @@ public enum PickupType
     AR_O = 3,
     AR_P = 4,
     M870 = 5,
+    PSTL_A = 6,
+    PSTL_B = 7,
+    PSTL_C = 8,
+    PSTL_D = 9,
+    PSTL_E = 10,
 }
 
 public class HoverAndRotate : MonoBehaviour

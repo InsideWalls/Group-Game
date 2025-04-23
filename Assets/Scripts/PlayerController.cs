@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
                 
                 int index = (int)component.pickupType;
 
-                if (index >= 0 && index <= 5) //& checks both sides no matter what.
+                if (index >= 0 && index <= 10) //& checks both sides no matter what.
                 // && will immediately returning false if the left is false. This is called "short-circuiting".
                 {
                     GunBehaviour weapon = Instantiate(guns[index], gunPos.position, gunPos.rotation);

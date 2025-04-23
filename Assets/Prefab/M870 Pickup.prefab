@@ -9,12 +9,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8028415973911792344, guid: fc703f82db031bb468b2415dd82b9d7d, type: 3}
+      propertyPath: fullAuto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028415973911792344, guid: fc703f82db031bb468b2415dd82b9d7d, type: 3}
       propertyPath: projectiles
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8028415973911792344, guid: fc703f82db031bb468b2415dd82b9d7d, type: 3}
       propertyPath: spreadAngle
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8400264964737067466, guid: fc703f82db031bb468b2415dd82b9d7d, type: 3}
       propertyPath: m_LocalPosition.x
