@@ -56,49 +56,49 @@ public class RobotHandling : MonoBehaviour
     {
         if (pControl.enabled)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) & robots.Count > 0)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && robots.Count > 0)
             {
                 currentRobotIndex = 0;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2) & robots.Count > 1)
+            if (Input.GetKeyDown(KeyCode.Alpha2) && robots.Count > 1)
             {
                 currentRobotIndex = 1;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3) & robots.Count > 2)
+            if (Input.GetKeyDown(KeyCode.Alpha3) && robots.Count > 2)
             {
                 currentRobotIndex = 2;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4) & robots.Count > 3)
+            if (Input.GetKeyDown(KeyCode.Alpha4) && robots.Count > 3)
             {
                 currentRobotIndex = 3;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha5) & robots.Count > 4)
+            if (Input.GetKeyDown(KeyCode.Alpha5) && robots.Count > 4)
             {
                 currentRobotIndex = 4;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha6) & robots.Count > 5)
+            if (Input.GetKeyDown(KeyCode.Alpha6) && robots.Count > 5)
             {
                 currentRobotIndex = 5;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha7) & robots.Count > 6)
+            if (Input.GetKeyDown(KeyCode.Alpha7) && robots.Count > 6)
             {
                 currentRobotIndex = 6;
                 Debug.Log("current robot: #" + (currentRobotIndex + 1));

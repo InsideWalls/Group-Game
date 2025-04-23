@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("triggered");
         //Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "GunPickup" && this.gameObject.tag == "Player") //is on each floating gun prefab
+        if (other.CompareTag("GunPickup")  && this.gameObject.tag == "Player") //is on each floating gun prefab
         {
             string str = other.gameObject.name;
             Debug.Log("name "+str);

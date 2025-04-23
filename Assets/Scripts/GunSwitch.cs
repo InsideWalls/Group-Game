@@ -25,19 +25,19 @@ public class GunSwitch : MonoBehaviour
     {
         if(weapons.Count > 0) //checks if weapons is empty
         {
-            if (Input.GetKey(KeyCode.Alpha1) & currentWeapon != 0) //checks for key & currentweapon
+            if (Input.GetKey(KeyCode.Alpha1) && currentWeapon != 0) //checks for key & currentweapon
             {
                 weapons[currentWeapon].SetActive(false);
                 currentWeapon = 0;
                 Debug.Log("Switched to Gun #" + (currentWeapon + 1));
             }
-            if (Input.GetKey(KeyCode.Alpha2) & currentWeapon != 1 & weapons.Count > 1) //only passes if weapons size is big enough
+            if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1 && weapons.Count > 1) //only passes if weapons size is big enough
             {
                 weapons[currentWeapon].SetActive(false);
                 currentWeapon = 1;
                 Debug.Log("Switched to Gun #" + (currentWeapon + 1));
             }
-            if (Input.GetKey(KeyCode.Alpha3) & currentWeapon != 2 & weapons.Count > 2)
+            if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2 & weapons.Count > 2)
             {
                 weapons[currentWeapon].SetActive(false);
                 currentWeapon = 2;
