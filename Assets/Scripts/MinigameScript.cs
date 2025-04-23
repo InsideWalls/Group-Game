@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class MinigameScript : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class MinigameScript : MonoBehaviour
     private RectTransform canvasRect;
     public RectTransform playerSquare;
     public RectTransform endSquare;
+    public TextMeshProUGUI timerText;
 
     private float centerX;
     private float centerY;
@@ -58,6 +61,7 @@ public class MinigameScript : MonoBehaviour
         {
             timeInt = (int)timeLeft;
             timeLeft -= Time.deltaTime;
+            timerText.text = timeInt.ToString();
 
             if(timeInt > timeLeft)
             {
