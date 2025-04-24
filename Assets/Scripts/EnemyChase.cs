@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 
 public class EnemyChase : MonoBehaviour
@@ -17,6 +18,7 @@ public class EnemyChase : MonoBehaviour
 
     private bool canBump = true;
     private Rigidbody rb;
+    private NavMeshAgent navAgent;
 
     private PlayerHealth playerHealth;
 
@@ -24,6 +26,7 @@ public class EnemyChase : MonoBehaviour
     {
         playerHealth = Player.GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody>();
+        navAgent = GetComponent<NavMeshAgent>();
         if (Player == null)
         {
             Player = GameObject.FindGameObjectWithTag("Player");
@@ -38,7 +41,9 @@ public class EnemyChase : MonoBehaviour
         transform.LookAt(Player.transform.position);
         if (Vector3.Distance(transform.position, Player.transform.position) >= MinDist)
         {
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+            //navAgent.destination = Player.transform.position;
+            navAgent.SetDestination(Player.transform.position);
+            //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         }
     }
 
