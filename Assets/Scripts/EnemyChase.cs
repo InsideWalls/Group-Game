@@ -6,6 +6,7 @@ public class EnemyChase : MonoBehaviour
 {
     [Header("Chase Settings")]
     public GameObject Player;
+    private bool isPlayer;
     public int MoveSpeed = 33;
     public int MaxDist = 10;
     public int MinDist = 5;
@@ -22,28 +23,28 @@ public class EnemyChase : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+    }
+
     private void Start()
     {
         playerHealth = Player.GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody>();
-        navAgent = GetComponent<NavMeshAgent>();
         if (Player == null)
         {
             Player = GameObject.FindGameObjectWithTag("Player");
         }
+        isPlayer = Player != null;
     }
 
     private void Update()
     {
-        if (Player == null) return;
-
         // Chase behavior
-        transform.LookAt(Player.transform.position);
-        if (Vector3.Distance(transform.position, Player.transform.position) >= MinDist)
+        if (isPlayer)
         {
-            //navAgent.destination = Player.transform.position;
             navAgent.SetDestination(Player.transform.position);
-            //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         }
     }
 
@@ -80,6 +81,7 @@ public class EnemyChase : MonoBehaviour
 
     private void BumpCharactersApart(GameObject player)
     {
+        Debug.Log("BUMP TRIGGERED");
         // Bump enemy away
         Vector3 enemyBumpDirection = (transform.position - player.transform.position).normalized;
         rb.AddForce(enemyBumpDirection * BumpForce, ForceMode.Impulse);
