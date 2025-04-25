@@ -27,10 +27,13 @@ public class MinigameScript : MonoBehaviour
     public List<RectTransform> blocks;
 
     private bool gameOn=false;
-    public float timeLimit = 15;
+    public float timeLimit = 20;
     private float timeLeft;
     private int timeInt;
-    
+
+    public AudioClip blipSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         centerX = canvas.transform.position.x;
@@ -52,6 +55,8 @@ public class MinigameScript : MonoBehaviour
         bottomY = centerY - canvasRect.rect.height/2 + offset;
         //Debug.Log(leftX + ", " + rightX + ", " + bottomY + ", " + topY);
         timeLeft = timeLimit;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -72,18 +77,22 @@ public class MinigameScript : MonoBehaviour
             if (Input.GetKeyDown("right"))
             {
                 playerSquare.position += new Vector3(-5f, 0, 0);
+                audioSource.PlayOneShot(blipSound);
             }
             else if (Input.GetKeyDown("left"))
             {
                 playerSquare.position += new Vector3(5f, 0, 0);
+                audioSource.PlayOneShot(blipSound);
             }
             else if (Input.GetKeyDown("up"))
             {
                 playerSquare.position += new Vector3(0, 5f, 0);
+                audioSource.PlayOneShot(blipSound);
             }
             else if (Input.GetKeyDown("down"))
             {
                 playerSquare.position += new Vector3(0, -5f, 0);
+                audioSource.PlayOneShot(blipSound);
             }
 
             foreach (RectTransform block in blocks)

@@ -133,7 +133,7 @@ public class RobotHandling : MonoBehaviour
         {
             float p = Random.Range(0.0f, 1.0f);
             Debug.Log("p="+p);
-            if (p > 0.7) //30% chance for hack to trigger
+            if (p > 0) //30% chance for hack to trigger
             {
                 Debug.Log("minigame triggered");
                 hackCam.SetActive(true);
@@ -143,14 +143,7 @@ public class RobotHandling : MonoBehaviour
             }
             else
             {
-                newRobot.tag = "HackedRobot";
-                newRobot.transform.Find("hackRange").gameObject.SetActive(false);
-                Debug.Log("hacked! robot was set to the " + (nextRobotIndex + 1) + " key");
-
-                robots.Add(newRobot);
-                showui(nextRobotIndex);
-                nextRobotIndex++;
-                newRobot = null;
+                endOfHack(true);
             }
             
         }
@@ -158,9 +151,10 @@ public class RobotHandling : MonoBehaviour
 
     public void endOfHack(bool success)
     {
-        if(success)
+        if (success)
         {
             newRobot.tag = "HackedRobot";
+            newRobot.GetComponent<hackSound>().playSound(true);
             newRobot.transform.Find("hackRange").gameObject.SetActive(false);
             Debug.Log("hacked! robot was set to the " + (nextRobotIndex + 1) + " key");
 
@@ -172,6 +166,7 @@ public class RobotHandling : MonoBehaviour
         else
         {
             Debug.Log("failed the hack");
+            newRobot.GetComponent<hackSound>().playSound(false);
         }
 
         hackCam.SetActive(false);
