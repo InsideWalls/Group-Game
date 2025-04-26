@@ -1,10 +1,31 @@
+using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering;
+public enum PickupType
+{
+    None = -1,
+    AR_L = 0,
+    AR_M = 1,
+    AR_N = 2,
+    AR_O = 3,
+    AR_P = 4,
+    M870 = 5,
+    PSTL_A = 6,
+    PSTL_B = 7,
+    PSTL_C = 8,
+    PSTL_D = 9,
+    PSTL_E = 10,
+}
 
 public class HoverAndRotate : MonoBehaviour
 {
     public float hoverHeight = 0.5f;
     public float hoverSpeed = 1f;
     public float rotationSpeed = 50f;
+
+    public PickupType pickupType;
+    public bool isAmmoPickup;
 
     private Vector3 startPosition;
 
