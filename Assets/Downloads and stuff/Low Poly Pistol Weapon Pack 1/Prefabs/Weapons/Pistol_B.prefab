@@ -311,13 +311,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6152012165266093810, guid: ec0581e8aa214204b9f01884e77f846c, type: 3}
   spawn: {fileID: 7204737516743173928}
-  velocity: 45
+  muzzleFlash: {fileID: 7504089040914252461}
   playerController: {fileID: 0}
   gs: {fileID: 0}
   ammoInGun: 0
   fireCooldown: 0
-  muzzleFlash: {fileID: 7504089040914252461}
   projectiles: 1
+  velocity: 45
   roundsPerMinute: 150
   fullAuto: 0
   magazineSize: 12
@@ -584,6 +584,38 @@ PrefabInstance:
     - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.22259825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.06438705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -0.25055605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -0.25055605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0.16475503
       objectReference: {fileID: 0}
     - target: {fileID: 4919637034235040199, guid: 91a6209d959846040b1734dda450110b, type: 3}
       propertyPath: m_Name

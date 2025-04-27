@@ -10,13 +10,20 @@ public class PlayerMovement : MonoBehaviour
     private GunBehavior gb; //reference GunBehavior script
     public Transform gunPos; //reference to where gun will appear relative to player
     public GunBehavior[] guns; //set of gun prefabs for reference
+    
 
     public int ammoCount;
-    public int AmmoInGun => (gs.currentWeapon < gs.weapons.Count)? gs.weapons[gs.currentWeapon].ammoInGun : 0;
-    // Every time you access this variable, it points to the GunBehavior variable.
-    // Ternary Operator: (true or false)? what happens if true : what happens if false
 
     private Vector3 velocity;
+
+    void Start()
+    {
+        gs = GetComponent<GunSwitch>();
+        if (TryGetComponent(out GunSwitch gunSwitch))
+        {
+            Debug.Log("gunSwitch properly instantiated");
+        }
+    }
 
 
     void Update()
@@ -40,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("triggered");
-        if (other.gameObject.TryGetComponent<HoverAndRotate>(out HoverAndRotate component)) 
+        if (other.gameObject.TryGetComponent(out HoverAndRotate component))
         // is on each floating gun prefab
         // A check to see if the object has a HoverAndRotate script component.
         // If there is one, it will enter the statement with that script component assigned to the value, "component" 
@@ -62,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     GunBehavior weapon = Instantiate(guns[index], gunPos.position, gunPos.rotation);
                     weapon.transform.SetParent(gunPos, true);
-                    // weapon.transform.localScale = new Vector3(10, 10, 10);
+                    if (index != 5) weapon.transform.localScale = new Vector3(10, 10, 10);
                     gs.AddToInventory(weapon);
                 }
             }

@@ -1037,13 +1037,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5896815481570757752, guid: bdbe99911b104c44cbd74b7cb58c4f0b, type: 3}
   spawn: {fileID: 2624572568765129306}
-  velocity: 50
+  muzzleFlash: {fileID: 4383390035262020450}
   playerController: {fileID: 0}
   gs: {fileID: 0}
   ammoInGun: 0
   fireCooldown: 0
-  muzzleFlash: {fileID: 4383390035262020450}
   projectiles: 1
+  velocity: 50
   roundsPerMinute: 300
   fullAuto: 1
   magazineSize: 30
@@ -1192,11 +1192,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.22259825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.06438705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -0.25055605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -0.25055605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0.16475503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618126836589928898, guid: 91a6209d959846040b1734dda450110b, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].outWeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4919637034235040199, guid: 91a6209d959846040b1734dda450110b, type: 3}
       propertyPath: m_Name

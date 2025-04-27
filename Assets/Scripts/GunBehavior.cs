@@ -46,8 +46,8 @@ public class GunBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerController = FindFirstObjectByType<PlayerMovement>();
-        gs = FindFirstObjectByType<GunSwitch>();
+        playerController = GetComponentInParent<PlayerMovement>();
+        gs = GetComponentInParent<GunSwitch>();
         if (velocity < 0) 
         {
             velocity = 70;
@@ -72,14 +72,13 @@ public class GunBehavior : MonoBehaviour
         {
             Debug.Log("Now Reloading");
             int ammoToAdd = magazineSize - ammoInGun;
-            Debug.Log($"ammoToAdd = {ammoToAdd} | magSize = {magazineSize} | ammoInGun = {ammoInGun} | PC.ammoCount = {playerController.ammoCount}");
             if (playerController.ammoCount < ammoToAdd)
             {
                 ammoInGun += playerController.ammoCount;
                 playerController.ammoCount = 0;
             }
             else
-            {                
+            {
                 playerController.ammoCount -= ammoToAdd;
                 ammoInGun = magazineSize;
             }

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7942404726143160491}
-  - component: {fileID: 8856808032179437305}
   - component: {fileID: 9207068439242765421}
+  - component: {fileID: 8856808032179437305}
   - component: {fileID: 7532123094769797011}
   - component: {fileID: 8310260953024990549}
   - component: {fileID: 5503068583400520767}
@@ -38,31 +38,6 @@ Transform:
   - {fileID: 4239227685767216264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &8856808032179437305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242114839239987703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcec76b3a6a8104d8e159284f20f648, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 40
-  gravity: -9.81
-  controller: {fileID: 9207068439242765421}
-  gs: {fileID: 7532123094769797011}
-  gunPos: {fileID: 1331845871454303167}
-  guns:
-  - {fileID: -4881268540509658310, guid: 8095ef38caf3d1f459ef19d91b36d73e, type: 3}
-  - {fileID: 6247572608981535450, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
-  - {fileID: -7238673334185248711, guid: 9a6080cd2e05bd045be9af4ce6467c2e, type: 3}
-  - {fileID: -4970716138375650963, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
-  - {fileID: -8134558726689008275, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
-  - {fileID: 400932893325850407, guid: f7eb3d274159b5b4f85b881fe625e7a7, type: 3}
-  ammoCount: 0
 --- !u!143 &9207068439242765421
 CharacterController:
   m_ObjectHideFlags: 0
@@ -88,6 +63,36 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 9.2, z: 0}
+--- !u!114 &8856808032179437305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242114839239987703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcec76b3a6a8104d8e159284f20f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 40
+  gravity: -9.81
+  controller: {fileID: 9207068439242765421}
+  gs: {fileID: 7532123094769797011}
+  gunPos: {fileID: 1331845871454303167}
+  guns:
+  - {fileID: -4881268540509658310, guid: 8095ef38caf3d1f459ef19d91b36d73e, type: 3}
+  - {fileID: 6247572608981535450, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
+  - {fileID: -7238673334185248711, guid: 9a6080cd2e05bd045be9af4ce6467c2e, type: 3}
+  - {fileID: -4970716138375650963, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
+  - {fileID: -8134558726689008275, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
+  - {fileID: 400932893325850407, guid: f7eb3d274159b5b4f85b881fe625e7a7, type: 3}
+  - {fileID: 2042762147058205061, guid: 3d475f10d076c444d8584c1be775ba38, type: 3}
+  - {fileID: 3937989959059479485, guid: e7461e3cb4dfd384ea54841be167ca84, type: 3}
+  - {fileID: 5136532962284704915, guid: 436d84b39ebbb99449cf0c0ed23b24a5, type: 3}
+  - {fileID: 6314264458506644219, guid: 5f04650d3064895489cdb8f95e907c1b, type: 3}
+  - {fileID: 631097280053910928, guid: 8147cbc638990a74995cb3f8161c7edd, type: 3}
+  ammoCount: 30
 --- !u!114 &7532123094769797011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 6970806436269612741}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.6574745, z: 4.35614}
+  m_LocalPosition: {x: 2, y: -2.54, z: 6.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
