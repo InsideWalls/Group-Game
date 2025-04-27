@@ -3,7 +3,147 @@ guid: adf0ff7e92b14ad4b850701cd33a59d0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BacksideMat
+    second: {fileID: 2100000, guid: 562bc86a88e554b499f5de62c54717ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest_BackMat
+    second: {fileID: 2100000, guid: 894d401f503d1704fb4e2e1fa20d42ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest_FrontMat
+    second: {fileID: 2100000, guid: f561165ebfcc42e499bf3bade3adf3b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest_SidesMat
+    second: {fileID: 2100000, guid: b6fb57ab7caa3d14da439414d7189ce3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collar_SidesMat
+    second: {fileID: 2100000, guid: 852a10bc09307e9479bf111f710154ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collar_TopMat
+    second: {fileID: 2100000, guid: d927243e0369487458f0be4ea354b8cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ear_FrontsMat
+    second: {fileID: 2100000, guid: d404e353962e175438411348f14b0719, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ear_SidesMat
+    second: {fileID: 2100000, guid: 423ad340c158889419ba5eb2841ef82f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FeetMat
+    second: {fileID: 2100000, guid: a06b623973de54642b6438d773500177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finger_BacksMat
+    second: {fileID: 2100000, guid: c315d018f3f2455488dd3e0708393591, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finger_FrontsMat
+    second: {fileID: 2100000, guid: c4abdcc2e60f32b47bcd6d2512bb2811, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finger_SidesMat
+    second: {fileID: 2100000, guid: f2ad05285245a484998ac6a8789d4011, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hand_FrontsMat
+    second: {fileID: 2100000, guid: 477497db51d4f804399e1400964f4fd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hand_PalmsMat
+    second: {fileID: 2100000, guid: 0b56a1f2e52b0bd449ad365e14ecc9c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_BackMat
+    second: {fileID: 2100000, guid: a9cabafddd5aecd488aa063af20e17e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_FrontMat
+    second: {fileID: 2100000, guid: cdff683ea48e61e4babb1232794b0832, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_SidesMat
+    second: {fileID: 2100000, guid: facd650509e3e034880f9dc84a94f1c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head_TopMat
+    second: {fileID: 2100000, guid: 904c23d508df8884e96c569c6ed4f003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lower_ArmsMat
+    second: {fileID: 2100000, guid: ed3da4093aa0c9c43954e2204dd0a076, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lower_LegsMat
+    second: {fileID: 2100000, guid: c74e8e7ca54fb6748ab1a7baa78242b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Neck_BackMat
+    second: {fileID: 2100000, guid: 4ccc6961e7e92394c89d4b177a3c1455, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Neck_FrontMat
+    second: {fileID: 2100000, guid: dfb210153bbe38a44828f8660cda3618, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Upper_ArmsMat
+    second: {fileID: 2100000, guid: 50c9fc60c1ba1b148b4fce1782169b91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Upper_Holster_LegMat
+    second: {fileID: 2100000, guid: 32d1fb8f93f2cf74b9b058ea4688e9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Upper_LegMat
+    second: {fileID: 2100000, guid: 240d96af9dc6b4e4abfbf4b7667e7847, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waist_BackMat
+    second: {fileID: 2100000, guid: 904c23d508df8884e96c569c6ed4f003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waist_FrontMat
+    second: {fileID: 2100000, guid: 0f6bda0bcb78ad44e8cc1404871437db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waist_SidesMat
+    second: {fileID: 2100000, guid: 12df9864de2f11f46981ef190c065fcf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -41,8 +181,8 @@ ModelImporter:
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
