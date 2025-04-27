@@ -71,7 +71,6 @@ public class EnemyChase : MonoBehaviour
         {
             Debug.Log("bullet hit");
 
-
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
 

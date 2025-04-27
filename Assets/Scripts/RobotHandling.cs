@@ -4,34 +4,43 @@ using System.Collections.Generic;
 
 public class RobotHandling : MonoBehaviour
 {
-    public PlayerMovement pControl;
-    private PlayerMovement robControl;
-    public GameObject playerCam;
-    private GameObject robCam;
-    
-    private GameObject newRobot;
-    public List<GameObject> robots;
+    public PlayerMovement pControl; //player's PlayerMovement
+    private PlayerMovement robControl; //this robot's PlayerMovement
+    public GameObject playerCam; //player's Camera object
+    private GameObject robCam; //this robot's Camera object
+
+    private GameObject newRobot; //robot that is currently within hacking range
+    public List<GameObject> robots; //player's available robots
     private int nextRobotIndex;
     private int currentRobotIndex;
 
-    public MinigameScript hackGame;
-    public GameObject hackCam;
+    public MinigameScript hackGame; //References minigame sequence
+    public GameObject hackCam; //minigame's Camera object
 
+    //references UI images in Canvas
     public List<GameObject> robotUI;
     public List<GameObject> circleUI;
+
+    //Used in handling robot switching
+    private float scrollChange;
+    private int scrollVal;
+    public float scrollScale=0.5f;
 
     void Start()
     {
         hackGame.enabled = true;
         hackCam.SetActive(false);
-        //Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
         nextRobotIndex = 0;
         currentRobotIndex = 0;
+
+        scrollChange = 0f;
+        scrollVal = 0;
 
         hideui();
         hidecircle();
     }
 
+    //hides robot images
     public void hideui()
     {
         foreach(GameObject robUI in robotUI)
@@ -39,6 +48,7 @@ public class RobotHandling : MonoBehaviour
             robUI.SetActive(false);
         }
     }
+    //hides circle images
     public void hidecircle()
     {
         foreach (GameObject circUI in circleUI)
@@ -54,54 +64,26 @@ public class RobotHandling : MonoBehaviour
 
     void Update()
     {
-        if (pControl.enabled)
+        //only runs if player is active, i.e., the minigame or a robot isn't
+        if (pControl.enabled && robots.Count !=0)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) & robots.Count > 0)
+            scrollChange += Input.mouseScrollDelta.y * scrollScale; //Stores total change in scroll distance
+            if (scrollChange >= 1f || scrollChange <= -1f) //if scrollChange reaches 1 it increments scrollVal, resets scrollChange
             {
-                currentRobotIndex = 0;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-                hidecircle();
-                circleUI[currentRobotIndex].SetActive(true);
+                scrollVal += (int)scrollChange;
+                if (scrollVal > robots.Count - 1)
+                    scrollVal = robots.Count - 1;
+                else if (scrollVal < 0)
+                    scrollVal = 0;
+
+                scrollChange = 0f;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2) & robots.Count > 1)
+
+            //current robot is set based on scrollVal
+            if (scrollVal != currentRobotIndex)
             {
-                currentRobotIndex = 1;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-                hidecircle();
-                circleUI[currentRobotIndex].SetActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3) & robots.Count > 2)
-            {
-                currentRobotIndex = 2;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-                hidecircle();
-                circleUI[currentRobotIndex].SetActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha4) & robots.Count > 3)
-            {
-                currentRobotIndex = 3;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-                hidecircle();
-                circleUI[currentRobotIndex].SetActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha5) & robots.Count > 4)
-            {
-                currentRobotIndex = 4;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-                hidecircle();
-                circleUI[currentRobotIndex].SetActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha6) & robots.Count > 5)
-            {
-                currentRobotIndex = 5;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
-                hidecircle();
-                circleUI[currentRobotIndex].SetActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha7) & robots.Count > 6)
-            {
-                currentRobotIndex = 6;
-                Debug.Log("current robot: #" + (currentRobotIndex + 1));
+                currentRobotIndex = scrollVal;
+                Debug.Log("Current robot: #" + (currentRobotIndex + 1));
                 hidecircle();
                 circleUI[currentRobotIndex].SetActive(true);
             }
@@ -109,31 +91,36 @@ public class RobotHandling : MonoBehaviour
 
         if (robots.Count >0)
         {
+            //sets references to current robot stuff
             robControl = robots[currentRobotIndex].GetComponent<PlayerMovement>();
             robCam = robots[currentRobotIndex].transform.Find("Main Camera").gameObject;
         }
 
+        //swaps between robots and player
         if (Input.GetKeyDown(KeyCode.R) && !hackCam.activeSelf)
         {
             if (robots.Count>0)
             {
+                //switches player's things off & current robot's things on,
+                //or vice versa
                 pControl.enabled=!pControl.enabled;
                 playerCam.SetActive(!playerCam.activeSelf);
                 robControl.enabled=!robControl.enabled;                
                 robCam.SetActive(!robCam.activeSelf);
-                Debug.Log("switched");
+                Debug.Log("Switched");
             }
             else
             {
-                Debug.Log("no robot");
+                Debug.Log("No robots found");
             }
         }
 
+        //Hacking
         if (Input.GetKeyDown(KeyCode.F) && newRobot != null && pControl.enabled)
         {
             float p = Random.Range(0.0f, 1.0f);
             Debug.Log("p="+p);
-            if (p > 0) //30% chance for hack to trigger
+            if (p > .7f) //30% chance for hack to trigger
             {
                 Debug.Log("minigame triggered");
                 hackCam.SetActive(true);
@@ -153,10 +140,11 @@ public class RobotHandling : MonoBehaviour
     {
         if (success)
         {
+            //Sets various components for newRobot as appropriate
             newRobot.tag = "HackedRobot";
             newRobot.GetComponent<hackSound>().playSound(true);
-            newRobot.transform.Find("hackRange").gameObject.SetActive(false);
-            Debug.Log("hacked! robot was set to the " + (nextRobotIndex + 1) + " key");
+            newRobot.transform.Find("hackRange").gameObject.SetActive(false); //disables hack trigger
+            Debug.Log("hacked!");
 
             robots.Add(newRobot);
             showui(nextRobotIndex);
@@ -179,7 +167,6 @@ public class RobotHandling : MonoBehaviour
         if (other.gameObject.tag == "HackRange")
         {
             Debug.Log("Within Range");
-            //hackable = true;
             newRobot = other.gameObject.transform.parent.gameObject;
         }
     }
@@ -189,7 +176,6 @@ public class RobotHandling : MonoBehaviour
         if (other.gameObject.tag == "HackRange")
         {
             Debug.Log("Left Range");
-            //hackable = false;
             newRobot = null;
         }
     }

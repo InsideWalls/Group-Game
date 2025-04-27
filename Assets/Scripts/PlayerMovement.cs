@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("triggered");
-        //Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "GunPickup" && this.gameObject.tag == "Player") //is on each floating gun prefab
         {
             string str = other.gameObject.name;

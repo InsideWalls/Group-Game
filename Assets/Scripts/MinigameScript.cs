@@ -6,7 +6,8 @@ using TMPro;
 
 public class MinigameScript : MonoBehaviour
 {
-    public RobotHandling robHandle;
+    public RobotHandling robHandle;//player's RobotHandling script
+
 
     public Canvas canvas;
     private RectTransform canvasRect;
@@ -14,6 +15,7 @@ public class MinigameScript : MonoBehaviour
     public RectTransform endSquare;
     public TextMeshProUGUI timerText;
 
+    //canvas info
     private float centerX;
     private float centerY;
     private float centerZ;
@@ -24,14 +26,14 @@ public class MinigameScript : MonoBehaviour
 
     private Vector3 startPos;
 
-    public List<RectTransform> blocks;
+    public List<RectTransform> blocks; //set of blocks in the minigame
 
     private bool gameOn=false;
     public float timeLimit = 20;
     private float timeLeft;
     private int timeInt;
 
-    public AudioClip blipSound;
+    public AudioClip blipSound; //--> Sounds/beep_sound
     private AudioSource audioSource;
 
     void Start()
@@ -40,26 +42,21 @@ public class MinigameScript : MonoBehaviour
         centerY = canvas.transform.position.y;
         centerZ = canvas.transform.position.z;
 
-        //Debug.Log(centerX + ", " + centerY+", "+centerZ);
         startPos = playerSquare.anchoredPosition;
-        //Debug.Log("start: " + startPos.x + ", " + startPos.y + ", " + startPos.z);
-        //startPos = new Vector3(playerSquare.rect.x, playerSquare.rect.y, 0);
-
         canvasRect = canvas.GetComponent<RectTransform>();
-        //Debug.Log(canvasRect.position);
-        //Debug.Log(canvasRect.rect.position);
+
         float offset = playerSquare.rect.width/2.0f;
         leftX = centerX - canvasRect.rect.width/2 + offset;
         rightX = centerX + canvasRect.rect.width/2-offset;
         topY = centerY + canvasRect.rect.height/2-offset;
         bottomY = centerY - canvasRect.rect.height/2 + offset;
-        //Debug.Log(leftX + ", " + rightX + ", " + bottomY + ", " + topY);
+
         timeLeft = timeLimit;
 
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = blipSound;
     }
-
-    // Update is called once per frame
+    //
     void Update()
     {
         if (gameOn)
@@ -92,20 +89,20 @@ public class MinigameScript : MonoBehaviour
             else if (Input.GetKeyDown("down"))
             {
                 playerSquare.position += new Vector3(0, -5f, 0);
-                audioSource.PlayOneShot(blipSound);
+                audioSource.Play();
             }
 
             foreach (RectTransform block in blocks)
             {
                 if (block.position == playerSquare.position)
                 {
-                    playerSquare.position = lastPos; break;
+                    playerSquare.position = lastPos; //moves player back if they ran into a block
+                    break;
                 }
             }
 
-            if (endSquare.position == playerSquare.position)
+            if (endSquare.position == playerSquare.position) //if player reaches the end
             {
-                //Debug.Log("you did it :)"); 
                 gameOn = false;
                 robHandle.endOfHack(true);
             }
@@ -115,14 +112,12 @@ public class MinigameScript : MonoBehaviour
             if (timeLeft <= 0)
             {
                 Debug.Log("Time's up!");
-                Debug.Log(timeLeft);
                 gameOn = false;
                 robHandle.endOfHack(false);
             }
         }
     }
 
-    //*
     Vector3 keepInBounds(RectTransform rect)
     {
         if (rect.position.x > rightX)
@@ -144,10 +139,10 @@ public class MinigameScript : MonoBehaviour
 
         return rect.position;
     }
-    //*/
+    
+    //resets the game
     public void gameStart()
     {
-        //Debug.Log("start: " + startPos.x + ", " + startPos.y + ", " + startPos.z);
         playerSquare.anchoredPosition = startPos;
         timeLeft = timeLimit;
         gameOn = true;

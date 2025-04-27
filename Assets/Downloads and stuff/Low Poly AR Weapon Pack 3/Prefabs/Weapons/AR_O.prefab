@@ -776,6 +776,7 @@ MonoBehaviour:
   bullet: {fileID: 5896815481570757752, guid: bdbe99911b104c44cbd74b7cb58c4f0b, type: 3}
   spawn: {fileID: 2047801512414984252}
   velocity: 100
+  gunshot: {fileID: 8300000, guid: 2bb6616c9f947b5408ab5bf9c0ba4b51, type: 3}
 --- !u!1 &8922795780857259943
 GameObject:
   m_ObjectHideFlags: 0
