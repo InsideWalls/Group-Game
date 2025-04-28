@@ -177,11 +177,12 @@ MonoBehaviour:
   ammoInGun: 0
   fireCooldown: 0
   projectiles: 1
-  velocity: 75
+  velocity: 180
   roundsPerMinute: 50
   fullAuto: 0
   magazineSize: 7
   spreadAngle: 1
+  gunshot: {fileID: 8300000, guid: 2bb6616c9f947b5408ab5bf9c0ba4b51, type: 3}
 --- !u!1 &5506949411328772694
 GameObject:
   m_ObjectHideFlags: 0

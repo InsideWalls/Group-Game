@@ -135,11 +135,12 @@ MonoBehaviour:
   ammoInGun: 0
   fireCooldown: 0
   projectiles: 12
-  velocity: 35
+  velocity: 160
   roundsPerMinute: 50
   fullAuto: 0
   magazineSize: 6
   spreadAngle: 12
+  gunshot: {fileID: 8300000, guid: 2bb6616c9f947b5408ab5bf9c0ba4b51, type: 3}
 --- !u!1001 &8980986570279877298
 PrefabInstance:
   m_ObjectHideFlags: 0

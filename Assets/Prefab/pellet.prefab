@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2028981788968367383}
   - component: {fileID: 5277882294372491148}
   - component: {fileID: 258812669791186007}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: pellet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -149,4 +149,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49859b7853e3e76429039b8832b2cda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 2
+  timeLimit: 1

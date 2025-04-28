@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7346053128379362041}
   - component: {fileID: 1587749593864654013}
   - component: {fileID: -5887392456704668855}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Bullet_Pistol_A
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3650473788905792028}
   - component: {fileID: 8653671056117806058}
   - component: {fileID: 2937224812861430432}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Bullet_Pistol_A_Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}

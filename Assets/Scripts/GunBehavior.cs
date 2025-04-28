@@ -43,11 +43,19 @@ public class GunBehavior : MonoBehaviour
     public float spreadAngle;
 
     //Input.GetMouseButtonDown(0)
+
+    [Header("Sound")]
+    public AudioClip gunshot; // --> Sounds/gunshot-effect
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerController = GetComponentInParent<PlayerMovement>();
         gs = GetComponentInParent<GunSwitch>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = gunshot;
         if (velocity < 0) 
         {
             velocity = 70;
@@ -108,6 +116,7 @@ public class GunBehavior : MonoBehaviour
                 bullet.transform.parent = null;
                 bullet.GetComponent<Rigidbody>().linearVelocity = bullet.transform.forward * velocity;
             }
+            audioSource.Play();            
         }
     }
 }
