@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7590948606249549172}
   - component: {fileID: 530275993657541998}
   - component: {fileID: 7589710395001676457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet_A_Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a461ee17a7f0b8449bd2c6e34b0e286, type: 2}
+  - {fileID: 2100000, guid: c8c0431fa301aed4389973128950c21a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,9 +99,10 @@ GameObject:
   - component: {fileID: 5392301891350900141}
   - component: {fileID: 2650962588056576044}
   - component: {fileID: 8282381412619816934}
-  m_Layer: 0
+  - component: {fileID: 7212707141988373598}
+  m_Layer: 7
   m_Name: Bullet_A
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,3 +216,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &7212707141988373598
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896815481570757752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.007
+  m_Height: 0.09
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.008}

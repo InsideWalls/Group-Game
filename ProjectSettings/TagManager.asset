@@ -8,6 +8,10 @@ TagManager:
   - Vehicle
   - Enemy
   - GunPickup
+  - HackRange
+  - HackedRobot
+  - Bullet
+  - Single
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - HackDetect
+  - Projectile
   - 
   - 
   - 
