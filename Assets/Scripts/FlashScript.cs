@@ -21,7 +21,7 @@ public class FlashScript : MonoBehaviour
     {
         if (flashed)
         {
-            flash.color = new Color(flash.color.r, flash.color.g, flash.color.b, (flashTime/flashLength)*0.8);
+            flash.color = new Color(flash.color.r, flash.color.g, flash.color.b, (flashTime/flashLength)*0.8f);
             flashTime -=Time.deltaTime;
             if (flashTime <= 0)
             {
