@@ -1,1 +1,0 @@
-Robot Tactics is a first person strategic shooter made in Unity where the player takes control of an agent who fights off bodyguards who are chasing him while using Robots to detour them
