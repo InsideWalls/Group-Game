@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class hackSound : MonoBehaviour
+public class RobotSound : MonoBehaviour
 {
     public AudioClip failSound; //--> Sounds/beep_warning
     public AudioClip successSound; //--> Sounds/transformers-sound
+    public AudioClip switchSound;
     private AudioSource audioSource;
     
     void Start()
@@ -11,11 +12,13 @@ public class hackSound : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
-    public void playSound(bool wasHacked)
+    public void playSound(string sound)
     {
-        if (!wasHacked)
+        if (sound=="failHack")
             audioSource.PlayOneShot(failSound);
-        else
+        if (sound=="succeedHack")
             audioSource.PlayOneShot(successSound);
+        if (sound=="switchRobot")
+            audioSource.PlayOneShot(switchSound);
     }
 }

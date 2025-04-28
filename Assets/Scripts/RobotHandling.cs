@@ -8,6 +8,10 @@ public class RobotHandling : MonoBehaviour
     private PlayerMovement robControl; //this robot's PlayerMovement
     public GameObject playerCam; //player's Camera object
     private GameObject robCam; //this robot's Camera object
+    private RobotSound robSound; //plays when switching
+
+    public float switchCooldown = 1f;
+    private float switchTime;
 
     private GameObject newRobot; //robot that is currently within hacking range
     public List<GameObject> robots; //player's available robots
@@ -32,6 +36,8 @@ public class RobotHandling : MonoBehaviour
         hackCam.SetActive(false);
         nextRobotIndex = 0;
         currentRobotIndex = 0;
+
+        switchTime = 0;
 
         scrollChange = 0f;
         scrollVal = 0;
@@ -94,10 +100,18 @@ public class RobotHandling : MonoBehaviour
             //sets references to current robot stuff
             robControl = robots[currentRobotIndex].GetComponent<PlayerMovement>();
             robCam = robots[currentRobotIndex].transform.Find("Main Camera").gameObject;
+            robSound = robots[currentRobotIndex].GetComponent<RobotSound>();
+        }
+
+        if (switchTime > 0)
+        {
+            switchTime -= Time.deltaTime;
+            if (switchTime <= 0)
+                Debug.Log("you can now switch");
         }
 
         //swaps between robots and player
-        if (Input.GetKeyDown(KeyCode.R) && !hackCam.activeSelf)
+        if (Input.GetKeyDown(KeyCode.R) && !hackCam.activeSelf && switchTime <=0)
         {
             if (robots.Count>0)
             {
@@ -107,6 +121,8 @@ public class RobotHandling : MonoBehaviour
                 playerCam.SetActive(!playerCam.activeSelf);
                 robControl.enabled=!robControl.enabled;                
                 robCam.SetActive(!robCam.activeSelf);
+                robSound.playSound("switchRobot");
+                switchTime = switchCooldown;
                 Debug.Log("Switched");
             }
             else
@@ -142,7 +158,7 @@ public class RobotHandling : MonoBehaviour
         {
             //Sets various components for newRobot as appropriate
             newRobot.tag = "HackedRobot";
-            newRobot.GetComponent<hackSound>().playSound(true);
+            newRobot.GetComponent<RobotSound>().playSound("succeedHack");
             newRobot.transform.Find("hackRange").gameObject.SetActive(false); //disables hack trigger
             Debug.Log("hacked!");
 
@@ -154,7 +170,7 @@ public class RobotHandling : MonoBehaviour
         else
         {
             Debug.Log("failed the hack");
-            newRobot.GetComponent<hackSound>().playSound(false);
+            newRobot.GetComponent<RobotSound>().playSound("failHack");
         }
 
         hackCam.SetActive(false);

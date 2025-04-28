@@ -2477,8 +2477,8 @@ GameObject:
   - component: {fileID: 201883052411890430}
   - component: {fileID: 4258414099916155962}
   - component: {fileID: 4611356818914668739}
-  - component: {fileID: 8387799028915326237}
   - component: {fileID: 2472811484836604220}
+  - component: {fileID: -6397290146774846808}
   m_Layer: 8
   m_Name: Robot
   m_TagString: Untagged
@@ -2705,20 +2705,6 @@ MonoBehaviour:
   gs: {fileID: 0}
   gunPos: {fileID: 0}
   guns: []
---- !u!114 &8387799028915326237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8775891284491517927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 743b2f3d6de645d40a6cb841b8acc5d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  failSound: {fileID: 8300000, guid: b6fd2c5fd58cd0b488244e88e3d4b50e, type: 3}
-  successSound: {fileID: 8300000, guid: 9b565c4c279fa404d909bfe4c268b78a, type: 3}
 --- !u!82 &2472811484836604220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2816,6 +2802,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6397290146774846808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775891284491517927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743b2f3d6de645d40a6cb841b8acc5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failSound: {fileID: 8300000, guid: b6fd2c5fd58cd0b488244e88e3d4b50e, type: 3}
+  successSound: {fileID: 8300000, guid: 9b565c4c279fa404d909bfe4c268b78a, type: 3}
+  switchSound: {fileID: 8300000, guid: 3735a59dc98464e4992be047d0e38b63, type: 3}
 --- !u!1 &8861399029624572496
 GameObject:
   m_ObjectHideFlags: 0
