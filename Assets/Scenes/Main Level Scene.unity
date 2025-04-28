@@ -408,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2009058589}
+      objectReference: {fileID: 8539790750410249245}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
@@ -1441,7 +1441,7 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2009058589}
+      objectReference: {fileID: 8539790750410249245}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
@@ -3473,7 +3473,7 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2009058589}
+      objectReference: {fileID: 8539790750410249245}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
@@ -4110,7 +4110,7 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2009058589}
+      objectReference: {fileID: 8539790750410249245}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
@@ -8572,7 +8572,7 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2009058589}
+      objectReference: {fileID: 8539790750410249245}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
@@ -10972,7 +10972,7 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2009058589}
+      objectReference: {fileID: 8539790750410249245}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
@@ -12121,11 +12121,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.8865185, y: 0.90889126, z: 10.540384}
   m_Center: {x: -2.9432254, y: -0.40541053, z: 5.270192}
---- !u!1 &2009058589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3575598285296477746, guid: 559b2ba0d9189ef4386804926b9af9d6, type: 3}
-  m_PrefabInstance: {fileID: 8539790750410249244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2011726187
 PrefabInstance:
   m_ObjectHideFlags: 0
