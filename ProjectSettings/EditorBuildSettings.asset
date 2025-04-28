@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Level Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Main Menu Scene.unity
+    guid: f4bbbdfc8e1f5c345b933d09db559117
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes - Copy.unity
+    guid: af83ea49fa2e500449c4185feddcc167
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: bd023ec7161e58449813016c8b94a9c7
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 34de1a247cedf964994f96a8dccc89aa
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

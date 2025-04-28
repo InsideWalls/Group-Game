@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject[] guns; //set of gun prefabs for reference
 
     private Vector3 velocity;
-    
+
 
     void Update()
     {
@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("triggered");
-        if (other.gameObject.tag == "GunPickup") //is on each floating gun prefab
+        //Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "GunPickup" && this.gameObject.tag == "Player") //is on each floating gun prefab
         {
             string str = other.gameObject.name;
             Debug.Log("name "+str);
