@@ -9,6 +9,7 @@ public class RobotHandling : MonoBehaviour
     public GameObject playerCam; //player's Camera object
     private GameObject robCam; //this robot's Camera object
     private RobotSound robSound; //plays when switching
+    public FlashScript flash;
 
     public float switchCooldown = 1f;
     private float switchTime;
@@ -121,6 +122,7 @@ public class RobotHandling : MonoBehaviour
                 playerCam.SetActive(!playerCam.activeSelf);
                 robControl.enabled=!robControl.enabled;                
                 robCam.SetActive(!robCam.activeSelf);
+                flash.flashbang();
                 robSound.playSound("switchRobot");
                 switchTime = switchCooldown;
                 Debug.Log("Switched");
