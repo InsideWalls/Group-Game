@@ -14,7 +14,7 @@ public class RobotHandling : MonoBehaviour
     private int nextRobotIndex;
     private int currentRobotIndex;
 
-    public MinigameScript hackGame;
+    //public MinigameScript hackGame;
     public GameObject hackCam;
 
     public GameObject robot1;
@@ -89,8 +89,8 @@ public class RobotHandling : MonoBehaviour
 
     void Start()
     {
-        hackGame.enabled = false;
-        hackCam.SetActive(false);
+        //hackGame.enabled = false;
+        //hackCam.SetActive(false);
         Debug.Log(pControl.enabled + " | " + playerCam.activeSelf);
         nextRobotIndex = 0;
         currentRobotIndex = 0;
@@ -138,7 +138,7 @@ public class RobotHandling : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
         {
-            hackGame.enabled = true;
+            //hackGame.enabled = true;
             hackCam.SetActive(true);
             pControl.enabled = false;
             playerCam.SetActive(false);
