@@ -112,7 +112,7 @@ public class RobotHandling : MonoBehaviour
         }
 
         //swaps between robots and player
-        if (Input.GetKeyDown(KeyCode.R) && !hackCam.activeSelf && switchTime <=0)
+        if (Input.GetKeyDown(KeyCode.E) && !hackCam.activeSelf && switchTime <=0)
         {
             if (robots.Count>0)
             {

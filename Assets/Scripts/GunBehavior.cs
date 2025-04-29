@@ -65,7 +65,7 @@ public class GunBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.R))
             {
                 Debug.Log("Reloading");
                 gs.weapons[gs.currentWeapon].Reload();

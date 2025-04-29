@@ -2703,8 +2703,10 @@ MonoBehaviour:
   gravity: -9.81
   controller: {fileID: 5583588984184070797}
   gs: {fileID: 0}
+  gb: {fileID: 0}
   gunPos: {fileID: 0}
   guns: []
+  ammoCount: 0
 --- !u!82 &2472811484836604220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2717,7 +2719,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2888,6 +2890,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2102894949084030736}
     m_Modifications:
+    - target: {fileID: 5210612519935546006, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 4611356818914668739}
     - target: {fileID: 7419260731707568730, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
