@@ -11,6 +11,7 @@ TagManager:
   - HackRange
   - HackedRobot
   - Bullet
+  - Single
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - Water
   - UI
   - HackDetect
-  - 
-  - 
-  - 
+  - WhatIsGround
+  - WhatIsPlayer
+  - Projectile
   - 
   - 
   - 

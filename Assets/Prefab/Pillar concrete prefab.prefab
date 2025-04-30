@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 8281583433721239450}
   - component: {fileID: 8281583433720239450}
   - component: {fileID: 8281583433724273978}
+  - component: {fileID: 8575569632104911827}
   m_Layer: 0
   m_Name: Pillar concrete prefab
   m_TagString: Untagged
@@ -437,6 +438,27 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 0676605c1576684438b6e1a490264100, type: 3}
+--- !u!65 &8575569632104911827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281583433717975962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 29, y: 250, z: 29}
+  m_Center: {x: 0, y: 125, z: 0}
 --- !u!1 &8917406565690253180
 GameObject:
   m_ObjectHideFlags: 0

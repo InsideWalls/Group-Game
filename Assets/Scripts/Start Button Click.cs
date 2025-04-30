@@ -13,6 +13,9 @@ public class StartButtonClick : MonoBehaviour
     public GameObject IBG;
     public Button Instruct;
     public GameObject message;
+    public GameObject message2;
+    public Button nextmessage;
+    public Button nextmessage2;
     public Button QuitMenu;
 
     [Header("Audio")]
@@ -33,6 +36,9 @@ public class StartButtonClick : MonoBehaviour
 
         IBG.gameObject.SetActive(false);
         message.gameObject.SetActive(false);
+        message2.gameObject.SetActive(false);
+        nextmessage.gameObject.SetActive(false);
+        nextmessage2.gameObject.SetActive(false);
         QuitMenu.gameObject.SetActive(false);
 
         Instruct.onClick.AddListener(Instructclick); // Add click listener
@@ -54,13 +60,33 @@ public class StartButtonClick : MonoBehaviour
             startButton.gameObject.SetActive(false);
             IBG.gameObject.SetActive(true);
             message.gameObject.SetActive(true);
+            message2.gameObject.SetActive(false);
             QuitMenu.gameObject.SetActive(true);
+            nextmessage.gameObject.SetActive(true);
+            nextmessage2.gameObject.SetActive(false);
             menusound();
 
             QuitMenu.onClick.AddListener(mainmenu); // Add click listener
+            nextmessage.onClick.AddListener(nexttext);
         }
     }
+    private void nexttext()
+    {
+        nextmessage.gameObject.SetActive(false);
+        nextmessage2.gameObject.SetActive(true);
+        message2.gameObject.SetActive(true);
+        message.gameObject.SetActive(false);
 
+        nextmessage2.onClick.AddListener(Instructclick);
+        QuitMenu.onClick.AddListener(mainmenu);
+    }
+    //private void nexttext2()
+    //{
+    //    message2.gameObject.SetActive(false);
+    //    message.gameObject.SetActive(true);
+    //    nextmessage2.gameObject.SetActive(false);
+    //    //nextmessage.onClick.AddListener(nexttext);
+    //}
     private IEnumerator MoveCameraThenPlayer()
     {
         // First, move the camera to target position
