@@ -834,8 +834,10 @@ MonoBehaviour:
   gravity: -9.81
   controller: {fileID: 230423179}
   gs: {fileID: 0}
+  gb: {fileID: 0}
   gunPos: {fileID: 0}
   guns: []
+  ammoCount: 0
 --- !u!1001 &239772857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1898,12 +1900,12 @@ MonoBehaviour:
     "W,A,S,D"
     to move
 
-    Left click to shoot
+    Left click to shoot and "R" to reload
 
 
-    Hack robots by being near them and pressing
-    "F". Select that robot with "1,2,3..." and then press "R" to switch to their
-    perspective and "R" again to switch back
+    Hack robots by being
+    near them and pressing "F". Select that robot with the scroll wheel and then
+    press "E" to switch to their perspective and "E" again to switch back
 
 
 '
