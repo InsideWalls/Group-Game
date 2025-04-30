@@ -95,7 +95,6 @@ public void allhearts()
     private void Die()
     {
         Debug.Log("Dead!");
-        // Need to make death screen and switch to it here
         SceneManager.LoadScene("Death");
     }
 
@@ -105,8 +104,8 @@ public void allhearts()
     public void IncrementWinCondition()
     {
         winCondition++;
-        Debug.Log("Win Condition: " + winCondition + " out of 6");
-        if (winCondition == 6)
+        Debug.Log("Win Condition: " + winCondition + " out of 12");
+        if (winCondition == 12)
         {
             SceneManager.LoadScene("Win");
         }   

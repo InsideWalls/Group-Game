@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -22,6 +23,18 @@ public class CountdownTimer : MonoBehaviour
     public GameObject Enemy5;
     public GameObject Enemy6;
 
+    public GameObject Enemy7;
+    public GameObject Enemy8;
+    public GameObject Enemy9;
+    public GameObject Enemy10;
+    public GameObject Enemy11;
+    public GameObject Enemy12;
+
+    public bool wave2 = false;
+    public bool wave1 = true;
+    public bool wave25 = false;
+    private float wavespawn;
+
     private bool enemy2Spawned = false;
     private float enemy2SpawnTime;
 
@@ -38,6 +51,12 @@ public class CountdownTimer : MonoBehaviour
         Enemy4.SetActive(false);
         Enemy5.SetActive(false);
         Enemy6.SetActive(false);
+        Enemy7.SetActive(false);
+        Enemy8.SetActive(false);
+        Enemy9.SetActive(false);
+        Enemy10.SetActive(false);
+        Enemy11.SetActive(false);
+        Enemy12.SetActive(false);
 
 
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -81,6 +100,21 @@ public class CountdownTimer : MonoBehaviour
             Enemy5.SetActive(true);
             Enemy6.SetActive(true);
             enemy4Spawned = false;
+
+            isCountingDown = true;
+            timeRemaining = 15f;
+            Hider.SetActive(true);
+
+            wave1 = false;
+            wave2 = true;
+        }
+        if (wave25 && Time.time - wavespawn >= 10)
+        {
+            wave25 = false;
+
+            Enemy10.SetActive(true);
+            Enemy11.SetActive(true);
+            Enemy12.SetActive(true);
         }
     }
 
@@ -107,11 +141,22 @@ public class CountdownTimer : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(alertSound.length);
 
-        Enemy1.SetActive(true);
-        Enemy2.SetActive(true);
+        if (wave1 == true)
+        {
+            Enemy1.SetActive(true);
+            Enemy2.SetActive(true);
 
-        enemy2Spawned = true;
-        enemy2SpawnTime = Time.time;
+            enemy2Spawned = true;
+            enemy2SpawnTime = Time.time;
+        }
+        if (wave2 == true) { 
+            Enemy7.SetActive(true);
+            Enemy8.SetActive(true);
+            Enemy9.SetActive(true);
+
+            wave25 = true;
+            wavespawn = Time.time;
+        }
 
         // Causes enemies to spawn in another script
         //spawnEnemy = true;

@@ -216,6 +216,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!1 &119732737
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +432,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!1 &320081795
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +647,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 8
   rotationSpeed: 163
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!4 &378776182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7392334553620615488, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
@@ -900,6 +906,75 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1001 &420333383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1650932998}
+    - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: MaxDist
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: MoveSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355863718, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_Name
+      value: Bodyguard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.064362
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 46.07499
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 78.44171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565168596355958918, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
 --- !u!1 &434787854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1145,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!1 &484094489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7907567775967570144, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
@@ -1090,6 +1167,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 8
   rotationSpeed: 163
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!4 &484094491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7419260731707568730, guid: b457496d9a25c3849a4673c6042fbac1, type: 3}
@@ -1326,6 +1405,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!1 &573703974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2371,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!1 &821347116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,6 +3906,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!4 &1387343308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 45fb3b613218da844b047d1f9349e0d6, type: 3}
@@ -4667,6 +4752,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!1 &1660181274
 GameObject:
   m_ObjectHideFlags: 0
@@ -4872,6 +4959,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 1
   rotationSpeed: 50
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!143 &1846306665
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4913,6 +5002,7 @@ MonoBehaviour:
   gravity: -9.81
   controller: {fileID: 1846306665}
   gs: {fileID: 1846306667}
+  gb: {fileID: 0}
   gunPos: {fileID: 434787855}
   guns:
   - {fileID: 639178805255782959, guid: 8095ef38caf3d1f459ef19d91b36d73e, type: 3}
@@ -4920,6 +5010,7 @@ MonoBehaviour:
   - {fileID: 3205656361919459485, guid: 9a6080cd2e05bd045be9af4ce6467c2e, type: 3}
   - {fileID: 8609571142284620566, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
   - {fileID: 7916494374254889978, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
+  ammoCount: 0
 --- !u!114 &1846306667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,6 +5023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60053a31b8030684587fe3d711c09464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapons: []
+  currentWeapon: 0
 --- !u!114 &1846306668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5172,6 +5265,8 @@ MonoBehaviour:
   hoverHeight: 0.5
   hoverSpeed: 8
   rotationSpeed: 163
+  pickupType: 0
+  isAmmoPickup: 0
 --- !u!4 &2131491245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8948801968451905964, guid: c3e82067129c1184bb25997b1b2c3380, type: 3}
@@ -5344,3 +5439,4 @@ SceneRoots:
   - {fileID: 371613476}
   - {fileID: 4886104112858599629}
   - {fileID: 1359033451}
+  - {fileID: 420333383}
