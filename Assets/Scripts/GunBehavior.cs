@@ -6,10 +6,9 @@ public class GunBehavior : MonoBehaviour
     public Transform spawn;
     public ParticleSystem muzzleFlash; // reference to the muzzleFlash particle system
     public PlayerMovement playerController;
-    public GunSwitch gs;
     public int ammoInGun; // How many bullets are currently in the weapon
     public float fireCooldown; // Indicator of how much time is left in the firing cooldown
-    
+    public bool isRobotWeapon;
 
     [Header("Weapon Stats")]
     /// <summary>
@@ -52,7 +51,6 @@ public class GunBehavior : MonoBehaviour
     void Start()
     {
         playerController = GetComponentInParent<PlayerMovement>();
-        gs = GetComponentInParent<GunSwitch>();
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.clip = gunshot;
@@ -76,7 +74,7 @@ public class GunBehavior : MonoBehaviour
 
     public void Reload()
     {
-        if (playerController.ammoCount != 0 || ammoInGun != magazineSize)
+        if (!isRobotWeapon && (playerController.ammoCount != 0 || ammoInGun != magazineSize))
         {
             Debug.Log("Now Reloading");
             int ammoToAdd = magazineSize - ammoInGun;
@@ -90,6 +88,11 @@ public class GunBehavior : MonoBehaviour
                 playerController.ammoCount -= ammoToAdd;
                 ammoInGun = magazineSize;
             }
+        }
+        else if (isRobotWeapon && ammoInGun != magazineSize)
+        {
+            Debug.Log("Now Reloading");
+            ammoInGun = magazineSize;
         }
     }
 
@@ -113,7 +116,7 @@ public class GunBehavior : MonoBehaviour
                 float y = Random.Range(-spreadAngle,spreadAngle);
                 bullet.transform.parent = spawn;
                 bullet.transform.localRotation = Quaternion.Euler(x,y,0);
-                if (this.gameObject.name != "M870(Clone)")
+                if (this.gameObject.name.Equals("M870(Clone)"))
                     bullet.transform.localScale = new Vector3(2, 2, 2); //the bullets were basically impossible to see
                 bullet.transform.parent = null;
                 bullet.GetComponent<Rigidbody>().linearVelocity = bullet.transform.forward * velocity;

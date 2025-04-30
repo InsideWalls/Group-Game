@@ -2479,6 +2479,7 @@ GameObject:
   - component: {fileID: 2654361882485498044}
   - component: {fileID: 2472811484836604220}
   - component: {fileID: -6397290146774846808}
+  - component: {fileID: 2822237191139912587}
   m_Layer: 8
   m_Name: Robot
   m_TagString: Untagged
@@ -2815,6 +2816,21 @@ MonoBehaviour:
   failSound: {fileID: 8300000, guid: b6fd2c5fd58cd0b488244e88e3d4b50e, type: 3}
   successSound: {fileID: 8300000, guid: 9b565c4c279fa404d909bfe4c268b78a, type: 3}
   switchSound: {fileID: 8300000, guid: 3735a59dc98464e4992be047d0e38b63, type: 3}
+--- !u!114 &2822237191139912587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775891284491517927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7f28fc5e43d8c4cb0a8b690c0d8269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoCounter: {fileID: 0}
+  isRobotWeapon: 1
+  cam: {fileID: 502243909591381148}
 --- !u!1 &8861399029624572496
 GameObject:
   m_ObjectHideFlags: 0

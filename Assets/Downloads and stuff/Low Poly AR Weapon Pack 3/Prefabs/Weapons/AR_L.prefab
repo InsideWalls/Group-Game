@@ -62,15 +62,15 @@ MonoBehaviour:
   spawn: {fileID: 2793303127910612514}
   muzzleFlash: {fileID: 7371231275835380562}
   playerController: {fileID: 0}
-  gs: {fileID: 0}
   ammoInGun: 0
   fireCooldown: 0
+  isRobotWeapon: 0
   projectiles: 1
-  velocity: 120
-  roundsPerMinute: 120
+  velocity: 180
+  roundsPerMinute: 200
   fullAuto: 0
   magazineSize: 30
-  spreadAngle: 225
+  spreadAngle: 2
   gunshot: {fileID: 8300000, guid: 2bb6616c9f947b5408ab5bf9c0ba4b51, type: 3}
 --- !u!1 &707075347266732021
 GameObject:
