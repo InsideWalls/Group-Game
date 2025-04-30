@@ -1863,7 +1863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392334553620615488, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -442.49637
+      value: -348.3
       objectReference: {fileID: 0}
     - target: {fileID: 7392334553620615488, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1871,7 +1871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392334553620615488, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 388.256
+      value: 403.9
       objectReference: {fileID: 0}
     - target: {fileID: 7392334553620615488, guid: ce45511be579fad46b4d79d52b5397f8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2339,6 +2339,15 @@ MonoBehaviour:
   Enemy4: {fileID: 19836312}
   Enemy5: {fileID: 2122191728}
   Enemy6: {fileID: 178435432}
+  Enemy7: {fileID: 0}
+  Enemy8: {fileID: 0}
+  Enemy9: {fileID: 0}
+  Enemy10: {fileID: 0}
+  Enemy11: {fileID: 0}
+  Enemy12: {fileID: 0}
+  wave2: 0
+  wave1: 1
+  wave25: 0
 --- !u!114 &427619957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3673,7 +3682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1405457347843525281, guid: f7eb3d274159b5b4f85b881fe625e7a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.54422
+      value: -443.7
       objectReference: {fileID: 0}
     - target: {fileID: 1405457347843525281, guid: f7eb3d274159b5b4f85b881fe625e7a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3681,7 +3690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405457347843525281, guid: f7eb3d274159b5b4f85b881fe625e7a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 328.7027
+      value: 390.2
       objectReference: {fileID: 0}
     - target: {fileID: 1405457347843525281, guid: f7eb3d274159b5b4f85b881fe625e7a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11073,6 +11082,10 @@ PrefabInstance:
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: BumpForce
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
+      propertyPath: MoveSpeed
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 648724714249781530, guid: 4e09fb6b5fa7a27439a8aa65af7719ca, type: 3}
       propertyPath: m_Enabled
