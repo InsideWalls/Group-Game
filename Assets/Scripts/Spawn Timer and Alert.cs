@@ -51,6 +51,12 @@ public class CountdownTimer : MonoBehaviour
         Enemy4.SetActive(false);
         Enemy5.SetActive(false);
         Enemy6.SetActive(false);
+        Enemy7.SetActive(false);
+        Enemy8.SetActive(false);
+        Enemy9.SetActive(false);
+        Enemy10.SetActive(false);
+        Enemy11.SetActive(false);
+        Enemy12.SetActive(false);
 
 
         audioSource = gameObject.AddComponent<AudioSource>();
