@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class RobotHandling : MonoBehaviour
 {
     public PlayerMovement pControl; //player's PlayerMovement
-    private PlayerMovement robControl; //this robot's PlayerMovement
+    private RobotMovement robControl; //this robot's PlayerMovement
     public GameObject playerCam; //player's Camera object
     private GameObject robCam; //this robot's Camera object
     private RobotSound robSound; //plays when switching
@@ -99,7 +99,7 @@ public class RobotHandling : MonoBehaviour
         if (robots.Count >0)
         {
             //sets references to current robot stuff
-            robControl = robots[currentRobotIndex].GetComponent<PlayerMovement>();
+            robControl = robots[currentRobotIndex].GetComponent<RobotMovement>();
             robCam = robots[currentRobotIndex].transform.Find("Main Camera").gameObject;
             robSound = robots[currentRobotIndex].GetComponent<RobotSound>();
         }

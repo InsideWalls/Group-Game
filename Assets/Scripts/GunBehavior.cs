@@ -66,10 +66,10 @@ public class GunBehavior : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
-            {
-                Debug.Log("Reloading");
-                gs.weapons[gs.currentWeapon].Reload();
-            }
+        {
+            Debug.Log("Reloading");
+            Reload();
+        }
         Fire();
         fireCooldown -= Time.deltaTime;
     }
@@ -113,6 +113,8 @@ public class GunBehavior : MonoBehaviour
                 float y = Random.Range(-spreadAngle,spreadAngle);
                 bullet.transform.parent = spawn;
                 bullet.transform.localRotation = Quaternion.Euler(x,y,0);
+                if (this.gameObject.name != "M870(Clone)")
+                    bullet.transform.localScale = new Vector3(2, 2, 2); //the bullets were basically impossible to see
                 bullet.transform.parent = null;
                 bullet.GetComponent<Rigidbody>().linearVelocity = bullet.transform.forward * velocity;
             }
